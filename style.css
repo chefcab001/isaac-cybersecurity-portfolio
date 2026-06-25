@@ -276,7 +276,8 @@ h3 {
 
 .about-band,
 .split-band,
-.role-band {
+.role-band,
+.roadmap-band {
   border-top: 1px solid var(--line);
 }
 
@@ -369,6 +370,10 @@ h3 {
   background: var(--panel-alt);
   font-size: 0.88rem;
   font-weight: 700;
+}
+
+.roadmap-list {
+  max-width: 900px;
 }
 
 .role-grid div {
