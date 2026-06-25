@@ -277,7 +277,8 @@ h3 {
 .about-band,
 .split-band,
 .role-band,
-.roadmap-band {
+.roadmap-band,
+.featured-project-band {
   border-top: 1px solid var(--line);
 }
 
@@ -389,6 +390,14 @@ h3 {
   align-items: start;
   padding-top: 12px;
   padding-bottom: 58px;
+}
+
+.project-detail-layout {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 24px 58px;
+  display: grid;
+  gap: 18px;
 }
 
 .resume-sidebar,

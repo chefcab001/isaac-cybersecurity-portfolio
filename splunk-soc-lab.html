@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splunk SOC Analyst Home Lab | Isaac Caballero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">Isaac Caballero</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Version 1.3 project</p>
+      <h1>Splunk SOC Analyst Home Lab</h1>
+      <p>
+        A public-safe lab project focused on Windows security telemetry, Sysmon, Splunk Enterprise,
+        detection searches, MITRE ATT&amp;CK mapping, alert creation, and incident investigation workflow.
+      </p>
+      <div class="hero-actions" aria-label="Project actions">
+        <a class="button primary" href="portfolio.html">Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="project-detail-layout" aria-label="Splunk SOC Analyst Home Lab details">
+      <article class="resume-section">
+        <h2>Project Overview</h2>
+        <p>
+          This home lab is designed to demonstrate entry-level SOC analyst readiness through controlled endpoint
+          telemetry collection, SIEM ingestion, detection development, alert review, and investigation notes.
+          All documentation is sanitized and avoids private IPs, usernames, hostnames, credentials, and sensitive data.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Lab Architecture</h2>
+        <p>
+          The planned architecture uses a Windows endpoint, Sysmon telemetry, and Splunk Enterprise running locally
+          or in a virtual machine. Evidence will use generic asset names and sanitized diagrams rather than exposing
+          real system identifiers.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Core Build</h2>
+        <ul>
+          <li>Windows endpoint</li>
+          <li>Sysmon installed and configured</li>
+          <li>Splunk Enterprise installed locally or in a VM</li>
+          <li>Windows Event Logs ingested into Splunk</li>
+          <li>Sysmon logs ingested into Splunk</li>
+          <li>Basic dashboard for security events</li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Detection Work</h2>
+        <ul>
+          <li>Failed logon detection</li>
+          <li>Suspicious PowerShell activity</li>
+          <li>Process creation monitoring</li>
+          <li>New local admin detection</li>
+          <li>Possible credential access indicators</li>
+          <li>MITRE ATT&amp;CK mapping for each detection</li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>MITRE ATT&amp;CK Mapping</h2>
+        <p>
+          Detection notes will map each search to relevant ATT&amp;CK tactics and techniques, such as credential
+          access, execution, persistence, discovery, and defense evasion where supported by lab telemetry.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Portfolio Evidence Plan</h2>
+        <ul>
+          <li>Network/lab diagram</li>
+          <li>Screenshots of Splunk ingestion</li>
+          <li>Screenshots of SPL searches</li>
+          <li>Alert rule examples</li>
+          <li>Incident investigation walkthrough</li>
+          <li>Lessons learned</li>
+          <li>Sanitized findings and analyst notes</li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Analyst Workflow</h2>
+        <p>
+          The investigation workflow will document alert triage, event review, timeline building, hypothesis testing,
+          MITRE mapping, analyst notes, and recommendation writing in a repeatable SOC-style format.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Resume Bullet</h2>
+        <p>
+          Built a Splunk SOC Analyst home lab using Windows, Sysmon, and Splunk Enterprise to ingest security telemetry,
+          create detection searches, map activity to MITRE ATT&amp;CK, and document incident investigation workflows.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Lessons Learned</h2>
+        <p>
+          The project will focus on practical lessons from data onboarding, source validation, false-positive review,
+          detection tuning, alert context, and communicating investigation results clearly.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Next Steps</h2>
+        <ul>
+          <li>Build the Windows and Splunk lab environment.</li>
+          <li>Install Sysmon and validate event collection.</li>
+          <li>Create initial SPL searches and alert examples.</li>
+          <li>Map detections to MITRE ATT&amp;CK.</li>
+          <li>Capture sanitized evidence for portfolio publication.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Isaac Caballero. Public-safe cybersecurity portfolio. Version 1.3.</p>
+  </footer>
+</body>
+</html>
