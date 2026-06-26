@@ -29,14 +29,15 @@
 
   <main id="main-content" tabindex="-1">
     <section class="page-hero">
-      <p class="eyebrow">Version 1.3 project</p>
+      <p class="eyebrow">Featured completed project</p>
       <h1>Splunk SOC Analyst Home Lab</h1>
       <p>
-        A public-safe lab project focused on Windows security telemetry, Sysmon, Splunk Enterprise,
-        detection searches, MITRE ATT&amp;CK mapping, alert creation, and incident investigation workflow.
+        Public-safe SOC lab evidence demonstrating Windows Security Event ingestion, SPL-based hunting,
+        event triage, process monitoring, and authentication analysis in Splunk Enterprise.
       </p>
       <div class="hero-actions" aria-label="Project actions">
         <a class="button primary" href="portfolio.html">Back to Projects</a>
+        <a class="button secondary" href="home-lab-architecture.html">View Home Lab Architecture</a>
       </div>
     </section>
 
@@ -44,99 +45,139 @@
       <article class="resume-section">
         <h2>Project Overview</h2>
         <p>
-          This home lab is designed to demonstrate entry-level SOC analyst readiness through controlled endpoint
-          telemetry collection, SIEM ingestion, detection development, alert review, and investigation notes.
-          All documentation is sanitized and avoids private IPs, usernames, hostnames, credentials, and sensitive data.
+          This lab demonstrates SOC analyst workflow using sanitized evidence from a working Splunk environment.
+          All publication artifacts were moved through evidence governance, redaction review, and public-release controls
+          before being included here.
         </p>
       </article>
 
       <article class="resume-section">
-        <h2>Lab Architecture</h2>
+        <h2>Environment and Data Sources</h2>
         <p>
-          The planned architecture uses a Windows endpoint, Sysmon telemetry, and Splunk Enterprise running locally
-          or in a virtual machine. Evidence will use generic asset names and sanitized diagrams rather than exposing
-          real system identifiers.
+          Splunk Enterprise was used to query Windows Security Event telemetry with focus on authentication, privilege,
+          credential usage, process creation, and event-volume trend analysis.
         </p>
-      </article>
-
-      <article class="resume-section">
-        <h2>Core Build</h2>
         <ul>
-          <li>Windows endpoint</li>
-          <li>Sysmon installed and configured</li>
-          <li>Splunk Enterprise installed locally or in a VM</li>
-          <li>Windows Event Logs ingested into Splunk</li>
-          <li>Sysmon logs ingested into Splunk</li>
-          <li>Basic dashboard for security events</li>
+          <li>Primary source: <code>WinEventLog:Security</code></li>
+          <li>Supporting source validation: System/Application/Setup sourcetypes</li>
+          <li>Analysis method: targeted SPL searches plus aggregate views</li>
         </ul>
       </article>
 
       <article class="resume-section">
-        <h2>Detection Work</h2>
+        <h2>Log Ingestion Validation</h2>
+        <p>
+          Ingestion and parsing validation confirmed searchable Windows event telemetry and usable sourcetype
+          categorization for SOC triage and hunt workflows.
+        </p>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-002_Windows_Event_Log_Ingestion_Validated.png" alt="Splunk search results validating Windows Security Event log ingestion." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-003_Sourcetype_Statistics.png" alt="Splunk sourcetype statistics for Windows event sources." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+      </article>
+
+      <article class="resume-section">
+        <h2>Detection and Hunt Use Cases</h2>
         <ul>
-          <li>Failed logon detection</li>
-          <li>Suspicious PowerShell activity</li>
-          <li>Process creation monitoring</li>
-          <li>New local admin detection</li>
-          <li>Possible credential access indicators</li>
-          <li>MITRE ATT&amp;CK mapping for each detection</li>
+          <li>Event ID 4624: successful authentication analysis</li>
+          <li>Event ID 4625: failed logon hunt with documented negative findings</li>
+          <li>Event ID 4634: logoff event activity review</li>
+          <li>Event ID 4648: explicit credential usage monitoring</li>
+          <li>Event ID 4672: privileged logon event review</li>
+          <li>Event ID 4688: process creation and top process frequency analysis</li>
+          <li>Event ID 4768: Kerberos authentication hunt with documented negative findings</li>
         </ul>
       </article>
 
       <article class="resume-section">
-        <h2>MITRE ATT&amp;CK Mapping</h2>
-        <p>
-          Detection notes will map each search to relevant ATT&amp;CK tactics and techniques, such as credential
-          access, execution, persistence, discovery, and defense evasion where supported by lab telemetry.
-        </p>
-      </article>
-
-      <article class="resume-section">
-        <h2>Portfolio Evidence Plan</h2>
+        <h2>Key SPL Queries (Sanitized)</h2>
         <ul>
-          <li>Network/lab diagram</li>
-          <li>Screenshots of Splunk ingestion</li>
-          <li>Screenshots of SPL searches</li>
-          <li>Alert rule examples</li>
-          <li>Incident investigation walkthrough</li>
-          <li>Lessons learned</li>
-          <li>Sanitized findings and analyst notes</li>
+          <li><code>source="WinEventLog:Security" EventCode=4624 | top Account_Name</code></li>
+          <li><code>source="WinEventLog:Security" EventCode=4625 | top Account_Name</code></li>
+          <li><code>source="WinEventLog:Security" | top limit=10 EventCode</code></li>
+          <li><code>source="WinEventLog:Security" EventCode=4688 | top New_Process_Name</code></li>
+          <li><code>source="WinEventLog:Security" EventCode=4648</code></li>
+          <li><code>source="WinEventLog:Security" | timechart count</code></li>
         </ul>
       </article>
 
       <article class="resume-section">
-        <h2>Analyst Workflow</h2>
-        <p>
-          The investigation workflow will document alert triage, event review, timeline building, hypothesis testing,
-          MITRE mapping, analyst notes, and recommendation writing in a repeatable SOC-style format.
-        </p>
+        <h2>Evidence Gallery (Publication-Ready)</h2>
+        <p>All images below are sanitized publication-ready artifacts from the approved redaction set.</p>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-001 Splunk Dashboard.png" alt="Sanitized Splunk dashboard and search workspace view." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-005_Authentication_Events.png" alt="Authentication event review in Splunk from Windows Security logs." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-007_Top_Security_Event_IDs.png" alt="Top Windows Security Event IDs aggregated in Splunk." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-009_PowerShell_Hunt_No_Results.png" alt="PowerShell hunt SPL query returning no results in review period." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-010_Event_Volume_Over_Time.png" alt="Event volume over time table from Splunk timechart query." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-011_Privileged_Logon_Event_4672.png" alt="Privileged logon event analysis for Event ID 4672 in Splunk." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-015_Process_Creation_Event_4688.png" alt="Process creation event analysis for Event ID 4688 in Splunk." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
+        <figure>
+          <img src="assets/images/splunk-soc/SIEM-016_Top_Process_Creation.png" alt="Top process creation aggregation from Windows Security Event ID 4688." style="width:100%; border:1px solid #24405f; border-radius:8px;">
+        </figure>
       </article>
 
       <article class="resume-section">
-        <h2>Resume Bullet</h2>
-        <p>
-          Built a Splunk SOC Analyst home lab using Windows, Sysmon, and Splunk Enterprise to ingest security telemetry,
-          create detection searches, map activity to MITRE ATT&amp;CK, and document incident investigation workflows.
-        </p>
-      </article>
-
-      <article class="resume-section">
-        <h2>Lessons Learned</h2>
-        <p>
-          The project will focus on practical lessons from data onboarding, source validation, false-positive review,
-          detection tuning, alert context, and communicating investigation results clearly.
-        </p>
-      </article>
-
-      <article class="resume-section">
-        <h2>Next Steps</h2>
+        <h2>Findings and Analyst Interpretation</h2>
         <ul>
-          <li>Build the Windows and Splunk lab environment.</li>
-          <li>Install Sysmon and validate event collection.</li>
-          <li>Create initial SPL searches and alert examples.</li>
-          <li>Map detections to MITRE ATT&amp;CK.</li>
-          <li>Capture sanitized evidence for portfolio publication.</li>
+          <li>Authentication and logoff telemetry supports account activity monitoring workflows.</li>
+          <li>Privileged and explicit credential events provide high-value investigation pivot points.</li>
+          <li>Process creation visibility enables baseline behavior review and suspicious execution triage.</li>
+          <li>No-result hunts were documented as valid outcomes to support baseline confidence.</li>
         </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Limitations and No-Result Hunts</h2>
+        <p>
+          Not all searches returned matching events in the selected time range. These negative results were retained
+          as evidence of methodical hunt execution and transparent analyst documentation.
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Skills Demonstrated</h2>
+        <ul>
+          <li>SIEM administration and search workflow</li>
+          <li>Windows Security Event analysis</li>
+          <li>SPL query development and aggregation</li>
+          <li>Authentication and privilege monitoring</li>
+          <li>Process execution triage and behavioral baselining</li>
+          <li>Evidence governance and public-release redaction controls</li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Framework Alignment (Conceptual)</h2>
+        <ul>
+          <li>NIST CSF 2.0: Detect, Analyze, and Respond support activities</li>
+          <li>MITRE ATT&amp;CK concepts: Execution, Credential Access, and Discovery-related telemetry review</li>
+          <li>NICE framework alignment: SOC monitoring, analysis, and incident triage capability development</li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Portfolio Summary</h2>
+        <p>
+          Designed and operated a public-safe Splunk SOC lab to validate telemetry ingestion, build and run
+          event-focused hunts, analyze authentication and process activity, and document findings in a
+          governance-controlled evidence workflow suitable for recruiter and interview review.
+        </p>
       </article>
     </section>
   </main>
