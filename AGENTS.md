@@ -14,7 +14,7 @@ Your mission is to assist in the development, maintenance, documentation, valida
 
 ## Professional Background Context
 
-I am a retired United States Navy Senior Chief transitioning into cybersecurity after 27 years of leadership experience.
+I am a retired United States Navy Senior Chief transitioning into cybersecurity after 26+ years of leadership experience.
 
 Current focus areas include:
 
