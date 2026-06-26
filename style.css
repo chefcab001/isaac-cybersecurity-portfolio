@@ -33,6 +33,24 @@ a {
   color: inherit;
 }
 
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 1000;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--button);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 12px;
+}
+
 a:focus-visible,
 .button:focus-visible {
   outline: 3px solid var(--teal);
