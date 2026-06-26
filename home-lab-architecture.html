@@ -11,6 +11,53 @@
   <link rel="canonical" href="https://www.isaaccaballerocyberportfolio.com/home-lab-architecture.html">
   <meta name="theme-color" content="#0b1220">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero,
+    .project-detail-layout,
+    .project-page,
+    .lab-layout {
+      max-width: 1100px;
+      width: min(94vw, 1100px);
+      margin: 0 auto;
+    }
+
+    .project-detail-layout {
+      padding: 32px 24px 64px;
+    }
+
+    .architecture-flow {
+      text-align: center;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .architecture-node-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .architecture-node {
+      background: var(--panel-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    @media (max-width: 520px) {
+      .project-detail-layout {
+        padding: 24px 16px 48px;
+      }
+
+      .architecture-node-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -39,6 +86,25 @@
         <a class="button primary" href="splunk-soc-lab.html">View Splunk SOC Evidence</a>
         <a class="button secondary" href="portfolio.html">Back to Projects</a>
       </div>
+      <div class="credential-grid" aria-label="Home lab metrics">
+        <span>3+ Years Hands-On Experience</span>
+        <span>16+ Published SIEM Artifacts</span>
+        <span>9 Security Domains Demonstrated</span>
+        <span>8 Active Lab Environments</span>
+      </div>
+      <ul class="pill-list" aria-label="Technology badges">
+        <li>Splunk</li>
+        <li>Kali Linux</li>
+        <li>Wireshark</li>
+        <li>PowerShell</li>
+        <li>Git</li>
+        <li>Windows</li>
+        <li>Linux</li>
+        <li>DFIR</li>
+        <li>NIST</li>
+        <li>Cloud Security</li>
+        <li>DevSecOps</li>
+      </ul>
     </section>
 
     <section class="notice-band">
@@ -59,6 +125,21 @@
           and secure architecture review. This page provides a public-safe skills showcase grounded in sanitized,
           evidence-driven portfolio work.
         </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Sanitized Architecture Diagram</h2>
+        <p class="architecture-flow">
+          Windows Host &rarr; Virtualization Layer &rarr; Evidence Collection &rarr; GitHub Portfolio
+        </p>
+        <div class="architecture-node-grid" aria-label="Architecture components">
+          <div class="architecture-node">Windows Host</div>
+          <div class="architecture-node">Virtualization Layer</div>
+          <div class="architecture-node">Kali Linux VM</div>
+          <div class="architecture-node">Splunk SIEM</div>
+          <div class="architecture-node">Evidence Collection</div>
+          <div class="architecture-node">GitHub Portfolio</div>
+        </div>
       </article>
 
       <article class="resume-section">
@@ -115,74 +196,119 @@
         </table>
       </article>
 
-      <article class="resume-section">
-        <h2>Current Lab Environment</h2>
-        <h3>Current</h3>
-        <ul>
-          <li>Windows host system</li>
-          <li>VirtualBox hypervisor</li>
-          <li>Kali Linux virtual machine</li>
-          <li>Splunk Enterprise installed locally</li>
-          <li>Windows Event Log ingestion for security telemetry analysis</li>
-          <li>Google Drive based evidence repository</li>
-          <li>Git and GitHub based portfolio workflow</li>
-        </ul>
-        <h3>Planned (Roadmap)</h3>
-        <ul>
-          <li>Expanded cloud-native telemetry scenarios and detection workflows</li>
-          <li>Additional network and endpoint visibility integrations</li>
-          <li>Detection engineering enhancements aligned to future role targets</li>
-        </ul>
-      </article>
+      <section class="project-grid" aria-label="Core capabilities in card layout">
+        <article class="project-card">
+          <h2>Current Lab Environment</h2>
+          <h3>Current</h3>
+          <ul>
+            <li>Windows host system</li>
+            <li>VirtualBox hypervisor</li>
+            <li>Kali Linux virtual machine</li>
+            <li>Splunk Enterprise installed locally</li>
+            <li>Windows Event Log ingestion for security telemetry analysis</li>
+            <li>Google Drive based evidence repository</li>
+            <li>Git and GitHub based portfolio workflow</li>
+          </ul>
+          <h3>Planned (Roadmap)</h3>
+          <ul>
+            <li>Expanded cloud-native telemetry scenarios and detection workflows</li>
+            <li>Additional network and endpoint visibility integrations</li>
+            <li>Detection engineering enhancements aligned to future role targets</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h2>Career Alignment</h2>
+          <ul>
+            <li>SOC Analyst</li>
+            <li>Incident Response Analyst</li>
+            <li>DFIR Analyst</li>
+            <li>GRC Analyst</li>
+            <li>Cloud Security Analyst</li>
+            <li>Security Operations Specialist</li>
+            <li>Security Engineer</li>
+            <li>DevSecOps aligned security role</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h2>DevSecOps Integration</h2>
+          <ul>
+            <li>Git version control for traceable updates</li>
+            <li>GitHub Pages publishing workflow</li>
+            <li>VS Code based authoring and review workflow</li>
+            <li>Evidence review before commit</li>
+            <li>Commit and push gates to prevent unintended publication</li>
+            <li>Change validation using <code>git diff --check</code> and <code>git status</code></li>
+            <li>Documentation as Code practices for consistency and accountability</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h2>Evidence Governance Workflow</h2>
+          <p>
+            Source preservation, redaction control, and publication review are applied before public release.
+          </p>
+          <p>
+            Original Evidence &rarr; Working Copy &rarr; Redaction Review &rarr; Visual QA &rarr; Publication Ready
+            &rarr; Git Commit &rarr; Live Portfolio
+          </p>
+          <p>
+            The workflow protects source fidelity while ensuring all public artifacts remain sanitized and public-safe.
+          </p>
+        </article>
+      </section>
 
       <article class="resume-section">
         <h2>Active Hands-On Lab Projects</h2>
-        <h3>Splunk SOC Analyst Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> Published</li>
-          <li><strong>Evidence:</strong> 16 sanitized SIEM artifacts</li>
-          <li><strong>Link:</strong> <a href="splunk-soc-lab.html">splunk-soc-lab.html</a></li>
-        </ul>
-        <h3>Kali Linux Security Testing Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> Active</li>
-          <li><strong>Skills:</strong> Linux, Nmap, Wireshark, vulnerability validation, security testing</li>
-        </ul>
-        <h3>Windows Telemetry Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> Active</li>
-          <li><strong>Skills:</strong> Event ID analysis, authentication monitoring, privilege monitoring, process creation</li>
-        </ul>
-        <h3>Network Security Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> In Progress</li>
-          <li><strong>Skills:</strong> Packet Tracer, VLANs, routing, ACLs, NAT, DHCP, Wireshark</li>
-        </ul>
-        <h3>DFIR Evidence Handling Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> In Progress</li>
-          <li><strong>Skills:</strong> Autopsy, Volatility, hashing, timeline thinking, chain of custody</li>
-        </ul>
-        <h3>GRC and Evidence Governance Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> Active</li>
-          <li><strong>Skills:</strong> NIST concepts, risk documentation, audit readiness, public-safe artifact control</li>
-        </ul>
-        <h3>DevSecOps Portfolio Pipeline</h3>
-        <ul>
-          <li><strong>Status:</strong> Active</li>
-          <li><strong>Skills:</strong> Git, GitHub Pages, VS Code, change control, redaction workflow, deployment</li>
-        </ul>
-        <h3>Cloud Security Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> Planned</li>
-          <li><strong>Skills:</strong> AWS IAM, CloudTrail, GuardDuty, Security Hub, cloud logging, cloud incident response</li>
-        </ul>
-        <h3>AI Security Review Lab</h3>
-        <ul>
-          <li><strong>Status:</strong> Public-safe summary only</li>
-          <li><strong>Skills:</strong> Secure architecture review, AI governance, multi-tenant risk concepts, OWASP LLM awareness</li>
-        </ul>
+        <section class="project-grid" aria-label="Hands-on project cards">
+          <article class="project-card">
+            <h3>Splunk SOC Analyst Lab</h3>
+            <p><strong>Status:</strong> Published</p>
+            <p><strong>Evidence:</strong> 16 sanitized SIEM artifacts</p>
+            <p><strong>Link:</strong> <a href="splunk-soc-lab.html">splunk-soc-lab.html</a></p>
+          </article>
+          <article class="project-card">
+            <h3>Kali Linux Security Testing Lab</h3>
+            <p><strong>Status:</strong> Active</p>
+            <p><strong>Skills:</strong> Linux, Nmap, Wireshark, vulnerability validation, security testing</p>
+          </article>
+          <article class="project-card">
+            <h3>Windows Telemetry Lab</h3>
+            <p><strong>Status:</strong> Active</p>
+            <p><strong>Skills:</strong> Event ID analysis, authentication monitoring, privilege monitoring, process creation</p>
+          </article>
+          <article class="project-card">
+            <h3>Network Security Lab</h3>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Skills:</strong> Packet Tracer, VLANs, routing, ACLs, NAT, DHCP, Wireshark</p>
+          </article>
+          <article class="project-card">
+            <h3>DFIR Evidence Handling Lab</h3>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Skills:</strong> Autopsy, Volatility, hashing, timeline thinking, chain of custody</p>
+          </article>
+          <article class="project-card">
+            <h3>GRC and Evidence Governance Lab</h3>
+            <p><strong>Status:</strong> Active</p>
+            <p><strong>Skills:</strong> NIST concepts, risk documentation, audit readiness, public-safe artifact control</p>
+          </article>
+          <article class="project-card">
+            <h3>DevSecOps Portfolio Pipeline</h3>
+            <p><strong>Status:</strong> Active</p>
+            <p><strong>Skills:</strong> Git, GitHub Pages, VS Code, change control, redaction workflow, deployment</p>
+          </article>
+          <article class="project-card">
+            <h3>Cloud Security Lab</h3>
+            <p><strong>Status:</strong> Planned</p>
+            <p><strong>Skills:</strong> AWS IAM, CloudTrail, GuardDuty, Security Hub, cloud logging, cloud incident response</p>
+          </article>
+          <article class="project-card">
+            <h3>AI Security Review Lab</h3>
+            <p><strong>Status:</strong> Public-safe summary only</p>
+            <p><strong>Skills:</strong> Secure architecture review, AI governance, multi-tenant risk concepts, OWASP LLM awareness</p>
+          </article>
+        </section>
       </article>
 
       <article class="resume-section">
@@ -241,50 +367,6 @@
             </tr>
           </tbody>
         </table>
-      </article>
-
-      <article class="resume-section">
-        <h2>Evidence Governance Workflow</h2>
-        <p>
-          Source preservation, redaction control, and publication review are applied before public release.
-        </p>
-        <p>
-          Original Evidence &rarr; Working Copy &rarr; Redaction Review &rarr; Visual QA &rarr; Publication Ready &rarr; Git Commit &rarr; Live Portfolio
-        </p>
-        <p>
-          The workflow protects source fidelity while ensuring all public artifacts remain sanitized and public-safe.
-        </p>
-      </article>
-
-      <article class="resume-section">
-        <h2>DevSecOps Integration</h2>
-        <p>
-          The home lab portfolio lifecycle uses a DevSecOps-aligned process for controlled updates, security-minded
-          publication, and traceable change management.
-        </p>
-        <ul>
-          <li>Git version control for traceable updates</li>
-          <li>GitHub Pages publishing workflow</li>
-          <li>VS Code based authoring and review workflow</li>
-          <li>Evidence review before commit</li>
-          <li>Commit and push gates to prevent unintended publication</li>
-          <li>Change validation using <code>git diff --check</code> and <code>git status</code></li>
-          <li>Documentation as Code practices for consistency and accountability</li>
-        </ul>
-      </article>
-
-      <article class="resume-section">
-        <h2>Career Alignment</h2>
-        <ul>
-          <li>SOC Analyst</li>
-          <li>Incident Response Analyst</li>
-          <li>DFIR Analyst</li>
-          <li>GRC Analyst</li>
-          <li>Cloud Security Analyst</li>
-          <li>Security Operations Specialist</li>
-          <li>Security Engineer</li>
-          <li>DevSecOps aligned security role</li>
-        </ul>
       </article>
 
       <article class="resume-section">
