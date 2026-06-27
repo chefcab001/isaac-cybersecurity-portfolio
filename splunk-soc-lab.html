@@ -43,7 +43,7 @@
 
     <section class="project-detail-layout" aria-label="Splunk SOC Analyst Home Lab details">
       <article class="resume-section">
-        <h2>Project Overview</h2>
+        <h2>Executive Summary</h2>
         <p>
           This lab demonstrates SOC analyst workflow using sanitized evidence from a working Splunk environment.
           All publication artifacts were moved through evidence governance, redaction review, and public-release controls
@@ -52,7 +52,18 @@
       </article>
 
       <article class="resume-section">
-        <h2>Environment and Data Sources</h2>
+        <h2>Skills Demonstrated</h2>
+        <ul>
+          <li>SIEM administration and search workflow</li>
+          <li>Windows Security Event analysis</li>
+          <li>SPL query development and aggregation</li>
+          <li>Authentication, privilege, and process telemetry triage</li>
+          <li>Evidence governance and public-safe documentation</li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Environment Overview</h2>
         <p>
           Splunk Enterprise was used to query Windows Security Event telemetry with focus on authentication, privilege,
           credential usage, process creation, and event-volume trend analysis.
@@ -62,6 +73,17 @@
           <li>Supporting source validation: System/Application/Setup sourcetypes</li>
           <li>Analysis method: targeted SPL searches plus aggregate views</li>
         </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Methodology</h2>
+        <ol>
+          <li>Validate source ingestion and sourcetype readiness.</li>
+          <li>Run event-focused SPL hunts across authentication and process events.</li>
+          <li>Pivot and correlate findings across related Event IDs.</li>
+          <li>Document positive and no-result outcomes for transparent reporting.</li>
+          <li>Route artifacts through redaction workflow before publication.</li>
+        </ol>
       </article>
 
       <article class="resume-section">
@@ -79,7 +101,7 @@
       </article>
 
       <article class="resume-section">
-        <h2>Detection and Hunt Use Cases</h2>
+        <h2>Detection Engineering</h2>
         <ul>
           <li>Event ID 4624: successful authentication analysis</li>
           <li>Event ID 4625: failed logon hunt with documented negative findings</li>
@@ -92,7 +114,7 @@
       </article>
 
       <article class="resume-section">
-        <h2>Key SPL Queries (Sanitized)</h2>
+        <h2>SPL Query Examples</h2>
         <ul>
           <li><code>source="WinEventLog:Security" EventCode=4624 | top Account_Name</code></li>
           <li><code>source="WinEventLog:Security" EventCode=4625 | top Account_Name</code></li>
@@ -104,7 +126,47 @@
       </article>
 
       <article class="resume-section">
-        <h2>Evidence Gallery (Publication-Ready)</h2>
+        <h2>Windows Event ID Mapping</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Event ID</th>
+              <th scope="col">Signal</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>4624</td><td>Successful logon</td><td>Validated</td></tr>
+            <tr><td>4625</td><td>Failed logon</td><td>Validated</td></tr>
+            <tr><td>4634</td><td>Logoff</td><td>Validated</td></tr>
+            <tr><td>4648</td><td>Explicit credential usage</td><td>Validated</td></tr>
+            <tr><td>4672</td><td>Privileged logon</td><td>Validated</td></tr>
+            <tr><td>4688</td><td>Process creation</td><td>Validated</td></tr>
+            <tr><td>4768</td><td>Kerberos authentication</td><td>Validated</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="resume-section">
+        <h2>Investigation Workflow Diagram</h2>
+        <p>
+          Alert or Hunt Trigger &rarr; SPL Query Execution &rarr; Event Correlation &rarr; Analyst Documentation &rarr; Public-safe Publication
+        </p>
+      </article>
+
+      <article class="resume-section">
+        <h2>Analyst Process Timeline</h2>
+        <ol>
+          <li>Define event scope and hunt objective.</li>
+          <li>Run detection queries and confirm event context.</li>
+          <li>Pivot between authentication, privilege, and process events.</li>
+          <li>Document findings and confidence.</li>
+          <li>Sanitize and publish evidence artifacts.</li>
+        </ol>
+      </article>
+
+      <article class="resume-section">
+        <h2>Evidence Gallery</h2>
         <p>All images below are sanitized publication-ready artifacts from the approved redaction set.</p>
         <figure>
           <img src="assets/images/splunk-soc/SIEM-001 Splunk Dashboard.png" alt="Sanitized Splunk dashboard and search workspace view." style="width:100%; border:1px solid #24405f; border-radius:8px;">
@@ -133,7 +195,7 @@
       </article>
 
       <article class="resume-section">
-        <h2>Findings and Analyst Interpretation</h2>
+        <h2>Findings or Outcomes</h2>
         <ul>
           <li>Authentication and logoff telemetry supports account activity monitoring workflows.</li>
           <li>Privileged and explicit credential events provide high-value investigation pivot points.</li>
@@ -143,41 +205,42 @@
       </article>
 
       <article class="resume-section">
-        <h2>Limitations and No-Result Hunts</h2>
+        <h2>Lessons Learned</h2>
         <p>
-          Not all searches returned matching events in the selected time range. These negative results were retained
-          as evidence of methodical hunt execution and transparent analyst documentation.
+          Not all searches returned matching events in the selected time range. These negative outcomes were preserved
+          as valid evidence of disciplined SOC analysis and transparent reporting.
         </p>
       </article>
 
       <article class="resume-section">
-        <h2>Skills Demonstrated</h2>
+        <h2>Tools and Technologies</h2>
         <ul>
-          <li>SIEM administration and search workflow</li>
-          <li>Windows Security Event analysis</li>
-          <li>SPL query development and aggregation</li>
-          <li>Authentication and privilege monitoring</li>
-          <li>Process execution triage and behavioral baselining</li>
-          <li>Evidence governance and public-release redaction controls</li>
+          <li>Splunk Enterprise</li>
+          <li>Windows Event Logs</li>
+          <li>SPL</li>
+          <li>PowerShell</li>
+          <li>Git and GitHub Pages</li>
+          <li>VS Code</li>
         </ul>
       </article>
 
       <article class="resume-section">
-        <h2>Framework Alignment (Conceptual)</h2>
+        <h2>Career Relevance</h2>
         <ul>
-          <li>NIST CSF 2.0: Detect, Analyze, and Respond support activities</li>
-          <li>MITRE ATT&amp;CK concepts: Execution, Credential Access, and Discovery-related telemetry review</li>
-          <li>NICE framework alignment: SOC monitoring, analysis, and incident triage capability development</li>
+          <li>SOC Analyst</li>
+          <li>Incident Response Analyst</li>
+          <li>Security Operations Specialist</li>
+          <li>Detection Engineering aligned security role</li>
         </ul>
       </article>
 
       <article class="resume-section">
-        <h2>Portfolio Summary</h2>
-        <p>
-          Designed and operated a public-safe Splunk SOC lab to validate telemetry ingestion, build and run
-          event-focused hunts, analyze authentication and process activity, and document findings in a
-          governance-controlled evidence workflow suitable for recruiter and interview review.
-        </p>
+        <h2>Public-safe Supporting Artifacts</h2>
+        <ul>
+          <li><a href="EVIDENCE_INVENTORY.md">Evidence inventory reference</a></li>
+          <li><a href="PORTFOLIO_WORKFLOW.md">Portfolio workflow and publication controls</a></li>
+          <li><a href="home-lab-architecture.html">Home Lab Architecture skills context</a></li>
+        </ul>
       </article>
     </section>
   </main>
