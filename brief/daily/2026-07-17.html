@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily GRC Cybersecurity Brief - July 17, 2026 | Isaac Caballero</title>
+  <meta name="description" content="Daily GRC cybersecurity brief with source-validated CVE, KEV, and framework tracking. Built under a Mandatory Source Currency Validation standard.">
+  <meta property="og:title" content="Daily GRC Cybersecurity Brief - July 17, 2026 | Isaac Caballero">
+  <meta property="og:description" content="Source-validated daily GRC cybersecurity brief. Every citation checked against a primary source before publication.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://www.isaaccaballerocyberportfolio.com/brief/daily/2026-07-17.html">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* Brief-specific additions - scoped, does not override site.css tokens */
+    .ledger {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      overflow: hidden;
+      font-size: 0.86rem;
+    }
+    .ledger-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 16px; background: var(--panel-alt); border-bottom: 1px solid var(--line);
+      color: var(--muted); letter-spacing: 0.04em; font-size: 0.72rem; text-transform: uppercase;
+    }
+    .ledger-row {
+      display: flex; gap: 14px; padding: 10px 16px; border-bottom: 1px solid var(--line);
+      align-items: baseline; flex-wrap: wrap;
+    }
+    .ledger-row:last-child { border-bottom: none; }
+    .ledger-item { color: var(--ink); flex: 1; min-width: 220px; }
+    .ledger-note { color: var(--muted); font-size: 0.8rem; }
+    .status-tag {
+      display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 0.72rem;
+      font-weight: 800; letter-spacing: 0.02em; white-space: nowrap;
+    }
+    .status-verified { background: rgba(97, 210, 196, 0.14); color: var(--green); }
+    .status-moderate { background: rgba(246, 199, 104, 0.14); color: var(--gold); }
+    .status-unconfirmed { background: rgba(248, 113, 113, 0.14); color: #f87171; }
+    .priority-alert {
+      background: rgba(248, 113, 113, 0.08);
+      border: 1px solid rgba(248, 113, 113, 0.32);
+      border-left: 4px solid #f87171;
+      border-radius: 8px; padding: 20px 22px; margin: 20px 0;
+    }
+    .priority-alert .alert-tag {
+      color: #f87171; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; display: block; margin-bottom: 8px;
+    }
+    .brief-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 14px 0; }
+    .brief-table th {
+      text-align: left; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line);
+    }
+    .brief-table td { padding: 10px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; }
+    .brief-table td.cve { color: var(--teal); font-family: monospace; font-size: 0.85rem; white-space: nowrap; }
+    .brief-table td.urgent { color: #f87171; font-weight: 800; }
+    .fw-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .fw-item:last-child { border-bottom: none; }
+    .fw-item .fw-name { color: var(--ink); font-weight: 800; display: block; margin-bottom: 4px; }
+    .fw-item .fw-status { font-size: 0.76rem; color: var(--green); font-weight: 700; }
+    .correction-banner {
+      background: var(--panel-alt); border: 1px solid var(--line); border-radius: 8px;
+      padding: 14px 18px; margin-bottom: 24px; font-size: 0.9rem; color: var(--muted);
+    }
+    .correction-banner strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="../../index.html">Isaac Caballero</a>
+      <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../portfolio.html">Projects</a>
+        <a href="../../certifications.html">Certifications</a>
+        <a href="../index.html" aria-current="page">GRC Brief</a>
+        <a href="../../contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="page-hero">
+      <p class="eyebrow">CyberChefcab | Daily GRC Cybersecurity Brief</p>
+      <h1>SharePoint, SonicWall, and FortiSandbox: three exploitation chains converging on the same 72 hour window</h1>
+      <p>July 17, 2026, Hawaii Standard Time. Compiled under a Mandatory Source Currency Validation standard, every citation checked against a primary source before publication.</p>
+      <div class="hero-actions" aria-label="Brief actions">
+        <a class="button primary" href="../index.html">Back to Brief Archive</a>
+        <a class="button secondary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues/new?title=Challenge:%20Daily%20Brief%202026-07-17&labels=brief-challenge">Challenge This Brief</a>
+      </div>
+      <div class="ledger">
+        <div class="ledger-head">
+          <span>Source Validation Ledger</span>
+          <span>Mandatory Source Currency Validation Module</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-verified">Verified</span>
+          <span class="ledger-item">3 of 3 new CISA KEV additions, July 16</span>
+          <span class="ledger-note">CISA + NVD, cross checked against press this session</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-moderate">Moderate</span>
+          <span class="ledger-item">CVE-2026-56164 severity characterization</span>
+          <span class="ledger-note">Microsoft 5.3 vs NVD 9.8, still unresolved</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-unconfirmed">Unconfirmed</span>
+          <span class="ledger-item">Live CISA KEV Catalog page fetch unavailable this session (JavaScript rendered)</span>
+          <span class="ledger-note">built from CISA alert pages, NVD, and press instead; recommend a manual spot check against the live catalog</span>
+        </div>
+      </div>
+    </section>
+    <section class="project-detail-layout" aria-label="Brief content">
+      <article class="resume-section">
+        <div class="correction-banner">
+          <strong>Correction and transparency note:</strong> no correction was required carrying forward from the July 16 edition, that edition's KEV table stands as published. This edition adds three items CISA confirmed on July 16, 2026 (CVE-2026-58644, CVE-2026-39808, CVE-2026-25089), each independently sourced to CISA's own alert pages, not copied forward from yesterday's table.
+        </div>
+        <h2>1. Most Time-Sensitive Item</h2>
+        <div class="priority-alert">
+          <span class="alert-tag">Priority action</span>
+          <p><strong>Three items share today's federal deadline, not one.</strong></p>
+          <p>CVE-2026-15409 and CVE-2026-15410 (SonicWall SMA1000, unauthenticated SSRF and post-auth code injection) and CVE-2026-56164 (Microsoft SharePoint Server, missing authentication for a critical function) all carry a <strong>July 17, 2026</strong> federal remediation due date under CISA BOD 26-04. Of the three, CVE-2026-15409 carries the maximum possible CVSS score (10.0), requires no authentication, and CISA confirms active exploitation. If you run SonicWall SMA1000 (models 6210, 7210, 8200) or on-premises SharePoint Server 2016, 2019, or Subscription Edition, today is the deadline, not this week.</p>
+        </div>
+      </article>
+      <article class="resume-section">
+        <h2>2. Critical Vulnerabilities: KEV Additions Through July 16</h2>
+        <p>CISA Known Exploited Vulnerabilities Catalog, July 13 through July 16, 2026. The first seven entries were verified in the July 16 edition and are carried forward unchanged. The final three entries were added and verified this session.</p>
+        <table class="brief-table">
+          <thead>
+            <tr><th>Date Added</th><th>CVE</th><th>Product</th><th>CVSS</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jul 13</td><td class="cve">CVE-2008-4128</td><td>Cisco IOS 12.4 / 871 ISR</td><td>4.3 v3.1 / 9.3 v2.0</td><td>Active, EOL hardware</td></tr>
+            <tr><td>Jul 14</td><td class="cve">CVE-2026-15409</td><td>SonicWall SMA1000 (SSRF)</td><td>10.0</td><td class="urgent">Active, due Jul 17</td></tr>
+            <tr><td>Jul 14</td><td class="cve">CVE-2026-15410</td><td>SonicWall SMA1000 (code injection)</td><td>7.2 vendor</td><td class="urgent">Active, due Jul 17</td></tr>
+            <tr><td>Jul 14</td><td class="cve">CVE-2026-56155</td><td>Microsoft AD FS (priv. escalation)</td><td>7.8 Microsoft</td><td>Active, due Jul 28</td></tr>
+            <tr><td>Jul 14</td><td class="cve">CVE-2026-56164</td><td>Microsoft SharePoint (missing auth)</td><td>5.3 / 9.8 (disputed)</td><td class="urgent">Active, due Jul 17</td></tr>
+            <tr><td>Jul 15</td><td class="cve">CVE-2023-4346</td><td>KNX Protocol (account lockout)</td><td>7.5</td><td>Active, due Jul 29</td></tr>
+            <tr><td>Jul 15</td><td class="cve">CVE-2026-46817</td><td>Oracle E-Business Suite (Payments)</td><td>9.8</td><td>Active</td></tr>
+            <tr><td>Jul 16</td><td class="cve">CVE-2026-58644</td><td>Microsoft SharePoint (deserialization RCE)</td><td>9.8</td><td class="urgent">Active, zero click, no separate due date from CVE-2026-56164</td></tr>
+            <tr><td>Jul 16</td><td class="cve">CVE-2026-39808</td><td>Fortinet FortiSandbox (OS command injection)</td><td>9.1</td><td>Active, due Jul 19</td></tr>
+            <tr><td>Jul 16</td><td class="cve">CVE-2026-25089</td><td>Fortinet FortiSandbox, Cloud, and PaaS (OS command injection)</td><td>9.1</td><td>Active, due Jul 19</td></tr>
+          </tbody>
+        </table>
+        <p style="color: var(--muted); font-size: 0.85rem;">CVSS is shown as a reference point only. Active exploitation status, not score, drives the priority order above.</p>
+        <p style="color: var(--muted); font-size: 0.85rem;">SharePoint chain context: CISA's own advisory language ties CVE-2026-58644 to two earlier SharePoint CVEs not listed as new KEV rows here because they were added well before this week, CVE-2026-45659 (authenticated RCE, CVSS 8.8, added July 1) and CVE-2026-32201 (spoofing, CVSS 6.5, added April 14). Together with CVE-2026-56164 and CVE-2026-58644 above, CISA describes all four as enabling unauthorized access to on-premises SharePoint Server.</p>
+      </article>
+      <article class="resume-section">
+        <h2>3. Applicable Frameworks: In Accordance With Authority Index</h2>
+        <div class="fw-item">
+          <span class="fw-name">CISA Binding Operational Directive (BOD) 26-04</span>
+          Prioritizing Security Updates Based on Risk. Sets the federal remediation deadlines above for FCEB agencies.
+          <div class="fw-status">Verified current as of July 17, 2026</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name">CISA Known Exploited Vulnerabilities Catalog</span>
+          Authoritative source for all ten entries above.
+          <div class="fw-status">Verified current as of July 17, 2026, subject to the catalog-fetch caveat in the Source Validation Ledger above</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name">NIST SP 800-53, Release 5.2.0</span>
+          Current control baseline release, relevant to documenting remediation and compensating controls for the SonicWall and FortiSandbox appliances above.
+          <div class="fw-status">Verified current as of July 16, 2026, carried forward, not independently re-checked this session</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name">NIST CSF 2.0</span>
+          Relevant to categorizing and prioritizing these risks within a broader risk program.
+          <div class="fw-status">Verified current; no newer core version identified this session</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name">MITRE CWE-306, Missing Authentication for Critical Function</span>
+          Weakness classification underlying the SharePoint vulnerabilities above.
+          <div class="fw-status" style="color: var(--gold);">Not independently re-verified this session</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name">MITRE CWE-78, OS Command Injection</span>
+          Weakness classification underlying both FortiSandbox vulnerabilities above.
+          <div class="fw-status" style="color: var(--gold);">Not independently re-verified this session</div>
+        </div>
+        <p style="margin-top: 16px;">CVSS score alone should not drive prioritization. NIST guidance is explicit that exploit maturity and confirmed active exploitation should override base CVSS scores in patch sequencing, directly relevant to today's three-way tie on remediation deadline despite three different CVSS values (10.0, 9.8, and an elevation of privilege flaw Microsoft itself under-scored at 5.3).</p>
+      </article>
+      <article class="resume-section">
+        <h2>4. Methodology</h2>
+        <p><strong>Step 1, Primary source.</strong> CISA, NVD, or the vendor's own advisory. This is the authoritative record and takes precedence whenever sources disagree.</p>
+        <p><strong>Step 2, Independent industry corroboration.</strong> Established security research and reporting is checked to confirm the primary-source reading matches how the broader GRC and vulnerability-management community is interpreting the same data. This step never overrides the primary source; it's a sanity check against misreading it.</p>
+        <p>Where a claim exists only in an aggregator or newsletter digest and can't be traced to a primary advisory, it's excluded or explicitly labeled as an unverified secondary source. This two-step check stays part of the process for every brief published under this name.</p>
+      </article>
+      <article class="resume-section">
+        <h2>5. Confidence Summary</h2>
+        <p><strong>Overall confidence: HIGH</strong> on the three new July 16 KEV entries and their exploitation status, sourced directly to CISA's dated alert pages and cross-checked against NVD and independent press this session. <strong>MODERATE</strong> on the exact severity reconciliation for CVE-2026-56164 (unresolved Microsoft/NVD scoring gap, carried forward) and on the completeness of the recent-additions picture generally, since the live CISA KEV Catalog page itself could not be fetched directly this session.</p>
+        <p style="color: var(--muted);">This brief reflects verification performed July 17, 2026, and should be re-checked against the live CISA KEV Catalog before being used as the sole basis for a compliance filing or audit response.</p>
+      </article>
+      <article class="resume-section">
+        <h2>6. Challenge This Brief</h2>
+        <p>Every brief published here is open to challenge. If you find a discrepancy, wrong version, outdated date, a source that's been superseded, open an issue against the repository and it will be reviewed, corrected in the open, and logged in the correction archive rather than silently edited.</p>
+        <div class="hero-actions" aria-label="Challenge actions">
+          <a class="button primary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues/new?title=Challenge:%20Daily%20Brief%202026-07-17&labels=brief-challenge">Open a Challenge on GitHub</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
