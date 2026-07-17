@@ -3,297 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberChefcab | Cybersecurity Portfolio</title>
-  <meta name="description" content="CyberChefcab public-safe cybersecurity portfolio covering cybersecurity, GRC, DFIR, cloud security, DevSecOps, and security operations.">
-  <meta property="og:title" content="CyberChefcab | Cybersecurity Portfolio">
-  <meta property="og:description" content="CyberChefcab public-safe cybersecurity portfolio covering cybersecurity, GRC, DFIR, cloud security, DevSecOps, and security operations.">
+  <title>GRC Cybersecurity Brief Archive | Isaac Caballero</title>
+  <meta name="description" content="Archive of daily, weekly, monthly, and quarterly GRC cybersecurity briefs. Every entry is source-validated and open to public challenge.">
+  <meta property="og:title" content="GRC Cybersecurity Brief Archive | Isaac Caballero">
+  <meta property="og:description" content="Source-validated GRC cybersecurity briefs. Every citation checked against a primary source before publication.">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://www.isaaccaballerocyberportfolio.com/">
+  <link rel="canonical" href="https://www.isaaccaballerocyberportfolio.com/brief/index.html">
   <meta name="theme-color" content="#0b1220">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/style.css">
   <style>
-    /* Homepage brief widget — scoped, does not override site.css tokens */
-    .brief-widget {
-      position: relative;
-      margin: 0 auto;
-      padding: 26px 28px;
-      max-width: 1180px;
-      border: 1px solid rgba(56, 189, 248, 0.34);
-      border-radius: 10px;
-      background:
-        linear-gradient(120deg, rgba(56, 189, 248, 0.10), rgba(97, 210, 196, 0.05) 60%, transparent),
-        var(--panel);
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.12);
+    .tier-group { margin-bottom: 36px; }
+    .tier-group h2 { display: flex; align-items: center; gap: 10px; }
+    .tier-count {
+      font-size: 0.72rem; font-weight: 700; color: var(--muted);
+      background: var(--panel-alt); border-radius: 6px; padding: 2px 9px;
     }
-    .brief-widget-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+    .entry-list { list-style: none; padding: 0; margin: 0; }
+    .entry-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 12px 0; border-bottom: 1px solid var(--line); gap: 16px; flex-wrap: wrap;
     }
-    .brief-widget-kicker {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .entry-row:last-child { border-bottom: none; }
+    .entry-row a.entry-link { color: var(--teal); font-weight: 700; text-decoration: none; }
+    .entry-row a.entry-link:hover { text-decoration: underline; }
+    .entry-flag {
+      font-size: 0.72rem; font-weight: 800; color: #f87171;
+      background: rgba(248, 113, 113, 0.12); border-radius: 6px; padding: 2px 8px;
     }
-    .brief-live-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 0 rgba(97, 210, 196, 0.6);
-      animation: brief-pulse 2s infinite;
-    }
-    @keyframes brief-pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(97, 210, 196, 0.55); }
-      70%  { box-shadow: 0 0 0 10px rgba(97, 210, 196, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(97, 210, 196, 0); }
-    }
-    .brief-widget-kicker span {
-      color: var(--gold);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .brief-widget-date {
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-    .brief-widget h2 {
-      margin: 0 0 10px;
-      font-size: 1.5rem;
-    }
-    .brief-widget-headline {
-      color: var(--ink);
-      font-size: 1.08rem;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 0 0 16px;
-    }
-    .brief-priority-strip {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 12px 14px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(248, 113, 113, 0.4);
-      border-left: 3px solid #f87171;
-      border-radius: 6px;
-      background: rgba(248, 113, 113, 0.07);
-    }
-    .brief-priority-strip .flag {
-      flex-shrink: 0;
-      padding: 3px 8px;
-      border-radius: 6px;
-      background: rgba(248, 113, 113, 0.16);
-      color: #f87171;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .brief-priority-strip p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-    .brief-priority-strip strong {
-      color: var(--ink);
-    }
-    .brief-widget-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    @media (max-width: 640px) {
-      .brief-widget { padding: 20px; }
-    }
+    .entry-date { color: var(--muted); font-size: 0.85rem; }
+    .empty-note { color: var(--muted); font-style: italic; padding: 10px 0; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="brand" href="index.html">Isaac Caballero</a>
+      <a class="brand" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/index.html">Isaac Caballero</a>
       <div class="nav-links">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/index.html">GRC Brief</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
+        <a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/index.html">Home</a>
+        <a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/portfolio.html">Projects</a>
+        <a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/certifications.html">Certifications</a>
+        <a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/index.html" aria-current="page">GRC Brief</a>
+        <a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
   <main id="main-content" tabindex="-1">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Cybersecurity portfolio</p>
-          <h1>Cloud security, incident response, forensics, GRC, and security operations.</h1>
-          <p class="hero-copy">
-            CyberChefcab is my public-safe cybersecurity portfolio documenting building, learning, defending,
-            evidence-driven security, continuous improvement, and recruiter-ready artifacts across cloud security,
-            incident response, digital forensics, GRC, and security operations.
-          </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="portfolio.html">View Projects</a>
-            <a class="button secondary" href="resume.html">View Resume Highlights</a>
-            <a class="button secondary" href="Isaac_Caballero_Cybersecurity_Resume.html" download>Download Resume</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/isaac-caballero-250b95263" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-            <a class="button secondary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-          </div>
-          <ul class="pill-list" aria-label="Brand themes">
-            <li>CyberChefcab</li>
-            <li>Cybersecurity</li>
-            <li>GRC</li>
-            <li>DFIR</li>
-            <li>Cloud Security</li>
-            <li>DevSecOps</li>
-            <li>Building</li>
-            <li>Learning</li>
-            <li>Defending</li>
-            <li>Public-safe documentation</li>
-          </ul>
-        </div>
-        <div class="hero-visual" aria-label="Isaac Caballero cybersecurity portfolio banner">
-          <div class="profile-photo" role="img" aria-label="Professional photo placeholder for Isaac Caballero">CyberChefcab</div>
-          <div class="signal-card">
-            <span>Cloud Security</span>
-            <span>Incident Response</span>
-            <span>Digital Forensics</span>
-            <span>GRC</span>
-            <span>Security Operations</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="brief-widget" aria-labelledby="brief-widget-heading">
-      <div class="brief-widget-top">
-        <div class="brief-widget-kicker">
-          <span class="brief-live-dot" aria-hidden="true"></span>
-          <span>CyberChefcab | Live</span>
-        </div>
-        <span class="brief-widget-date">July 16, 2026</span>
-      </div>
-      <h2 id="brief-widget-heading">Daily GRC / Cyber Brief</h2>
-      <p class="brief-widget-headline">
-        Remote access, identity, and collaboration systems under simultaneous pressure — seven CISA KEV additions
-        reconciled this week, each source-validated before publication.
+    <section class="page-hero">
+      <p class="eyebrow">CyberChefcab | GRC Cybersecurity Brief</p>
+      <h1>Brief Archive</h1>
+      <p>
+        Daily, weekly, monthly, and quarterly GRC cybersecurity briefs, each source-validated under a
+        Mandatory Source Currency Validation standard. Every entry is open to public challenge — corrections
+        are logged, never silently edited.
       </p>
-      <div class="brief-priority-strip">
-        <span class="flag">Due Jul 17</span>
-        <p><strong>CVE-2026-56164</strong> — Microsoft SharePoint Server, missing authentication for a critical function. Unauthenticated, zero-click, and already exploited. Federal remediation window closes tomorrow.</p>
-      </div>
-      <div class="brief-widget-actions">
-        <a class="button primary" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/daily/2026-07-16.html">Read Today's Brief</a>
-        <a class="button secondary" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/index.html">View Brief Archive</a>
+      <div class="hero-actions" aria-label="Archive actions">
+        <a class="button primary" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/daily/2026-07-16.html">Latest Daily Brief</a>
+        <a class="button secondary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues?q=is%3Aissue+label%3Abrief-challenge">View All Challenges</a>
       </div>
     </section>
 
-    <section class="content-band credentials-band" aria-labelledby="credentials-heading">
-      <div class="section-heading">
-        <p class="eyebrow">Credentials</p>
-        <h2 id="credentials-heading">Certifications, education, and leadership background</h2>
-      </div>
-      <div class="credential-grid">
-        <span>CompTIA Security+</span>
-        <span>CompTIA Network+</span>
-        <span>CompTIA A+</span>
-        <span>CSIS</span>
-        <span>CIOS</span>
-        <span>CySA+ Candidate</span>
-        <span>DoDM 8140.03 Aligned</span>
-        <span>BSIT Cybersecurity (Magna Cum Laude)</span>
-        <span>Retired U.S. Navy Senior Chief (E-8)</span>
-      </div>
-    </section>
+    <section class="project-detail-layout" aria-label="Brief archive listings">
 
-    <section class="content-band about-band" aria-labelledby="about-heading">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2 id="about-heading">Leadership experience with a cybersecurity focus</h2>
-      </div>
-      <p class="about-copy">
-        Retired U.S. Navy Senior Chief with 26+ years of leadership experience transitioning into cybersecurity.
-      </p>
-    </section>
+      <article class="resume-section tier-group">
+        <h2>Daily <span class="tier-count">1 entry</span></h2>
+        <p>New threats, KEV additions, CVEs, and advisories, published each day.</p>
+        <ul class="entry-list">
+          <li class="entry-row">
+            <a class="entry-link" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/daily/2026-07-16.html">July 16, 2026 — Remote access, identity, and collaboration systems under simultaneous pressure</a>
+            <span class="entry-date">Corrected same day</span>
+          </li>
+        </ul>
+      </article>
 
-    <section class="content-band role-band" aria-labelledby="brand-heading">
-      <div class="section-heading">
-        <p class="eyebrow">Branding standard</p>
-        <h2 id="brand-heading">CyberChefcab professional identity</h2>
-      </div>
-      <div class="role-grid">
-        <div><strong>Professional identity</strong><span>Cybersecurity | GRC | DFIR | Cloud Security | DevSecOps</span></div>
-        <div><strong>Standard themes</strong><span>Building, learning, defending, evidence-driven security</span></div>
-        <div><strong>Documentation style</strong><span>Public-safe, recruiter-facing, evidence-backed communication</span></div>
-      </div>
-    </section>
+      <article class="resume-section tier-group">
+        <h2>Weekly <span class="tier-count">0 entries</span></h2>
+        <p>Summarizes the week's dailies — patterns, what mattered, what got corrected. Links back to each daily rather than repeating it.</p>
+        <p class="empty-note">First weekly rollup publishes once a full week of dailies exists.</p>
+      </article>
 
-    <section class="content-band">
-      <div class="section-heading">
-        <p class="eyebrow">Portfolio focus</p>
-        <h2>Balanced cybersecurity story</h2>
-        <p>
-          The current portfolio is organized around complementary domains that show technical evidence handling,
-          documentation discipline, risk-based prioritization, and professional communication.
-        </p>
-      </div>
+      <article class="resume-section tier-group">
+        <h2>Monthly <span class="tier-count">0 entries</span></h2>
+        <p>Summarizes the month's weeklies — framework and regulatory trend tracking.</p>
+        <p class="empty-note">First monthly rollup publishes once a full month of weeklies exists.</p>
+      </article>
 
-      <div class="domain-grid">
-        <article class="domain-card">
-          <h3>AI Security</h3>
-          <p>Sanitized assessment and governance narratives for AI and ML security work.</p>
-        </article>
-        <article class="domain-card">
-          <h3>Digital Forensics</h3>
-          <p>Evidence handling, chain-of-custody awareness, and DFIR documentation practices.</p>
-        </article>
-        <article class="domain-card">
-          <h3>Incident Response</h3>
-          <p>Response lifecycle thinking, NIST-aligned concepts, phishing, ransomware, and lessons learned.</p>
-        </article>
-        <article class="domain-card">
-          <h3>GRC and Auditing</h3>
-          <p>Audit readiness, POA&amp;M tracking, compliance evidence, and risk communication.</p>
-        </article>
-        <article class="domain-card">
-          <h3>Network Security</h3>
-          <p>Packet Tracer, routing, switching, ACLs, NAT/DHCP, Wireshark, and infrastructure fundamentals.</p>
-        </article>
-        <article class="domain-card">
-          <h3>Threat Hunting and SIEM</h3>
-          <p>SOC readiness, monitoring concepts, SIEM awareness, alert triage, and detection-oriented learning.</p>
-        </article>
-      </div>
-    </section>
+      <article class="resume-section tier-group">
+        <h2>Quarterly <span class="tier-count">0 entries</span></h2>
+        <p>Strategic, board-level posture assessment summarizing the quarter's monthlies.</p>
+        <p class="empty-note">First quarterly rollup publishes once a full quarter of monthlies exists.</p>
+      </article>
 
-    <section class="content-band split-band">
-      <div>
-        <p class="eyebrow">How the work was packaged</p>
-        <h2>Controlled, source-preserving workflow</h2>
-      </div>
-      <ul class="check-list">
-        <li>Candidate artifacts were identified from inventory and recommendation reports.</li>
-        <li>Files were copied into dedicated portfolio folders without changing source artifacts.</li>
-        <li>Copy logs, cleanup logs, README files, metadata, professional profile drafts, and STAR stories were created.</li>
-        <li>False positives were removed from destination folders only.</li>
-        <li>Public-facing summaries avoid proprietary code, credentials, tenant data, sensitive findings, and private deployment details.</li>
-      </ul>
+      <article class="resume-section tier-group">
+        <h2>Correction Log <span class="tier-count">1 entry</span></h2>
+        <p>Every disclosed correction, kept separately and permanently, rather than silently edited into the original.</p>
+        <ul class="entry-list">
+          <li class="entry-row">
+            <span class="entry-flag">Corrected</span>
+            <a class="entry-link" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/daily/2026-07-16.html">July 16, 2026 daily brief — missed 4 of 7 CISA KEV additions on first draft</a>
+            <span class="entry-date">See correction note inline in the brief</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="resume-section">
+        <h2>Methodology</h2>
+        <p>Every brief in this archive follows the same two-step check before publication: primary source first (CISA, NVD, or the vendor's own advisory), then independent industry corroboration as a sanity check, never as an override. Anything that traces only to an aggregator or newsletter digest is excluded or explicitly labeled unverified.</p>
+        <p>Challenges are welcome and expected. Use the "Challenge This Brief" link on any entry, or browse <a href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues?q=is%3Aissue+label%3Abrief-challenge">all open and resolved challenges</a> directly.</p>
+      </article>
+
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 Isaac Caballero. Public-safe cybersecurity portfolio. Version 1.3.</p>
-  </footer>
 </body>
 </html>
