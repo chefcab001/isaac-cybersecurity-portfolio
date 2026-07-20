@@ -73,6 +73,26 @@
       padding: 14px 18px; margin-bottom: 24px; font-size: 0.9rem; color: var(--muted);
     }
     .correction-banner strong { color: var(--ink); }
+    .brief-toc {
+      margin: 18px 0 0; padding: 16px 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
+    }
+    .brief-toc .toc-label {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 10px;
+    }
+    .brief-toc ol { margin: 0; padding-left: 20px; }
+    .brief-toc li { padding: 4px 0; }
+    .brief-toc a { color: var(--ink); text-decoration: none; }
+    .brief-toc a:hover { color: var(--teal); text-decoration: underline; }
+    .meta-label {
+      display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--teal); margin: 16px 0 6px;
+    }
+    .recommendation {
+      margin-top: 14px; padding: 12px 16px; border-left: 3px solid var(--gold);
+      background: rgba(246, 199, 104, 0.08); border-radius: 6px; font-size: 0.92rem;
+    }
+    .recommendation strong { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -129,20 +149,31 @@
           <span class="tier-tag tier-independent">Independent Vendor</span>Private security research or threat-intel firm &mdash; corroborated and attributed, not government-confirmed.
         </div>
       </div>
+      <div class="brief-toc">
+        <p class="toc-label">In today's brief</p>
+        <ol>
+          <li><a href="#priority">UTA0533 exploited two SonicWall SMA1000 zero-days three weeks before disclosure</a></li>
+          <li><a href="#kev">KEV Catalog holds at ten entries, no new additions confirmed this session</a></li>
+          <li><a href="#sleepergem">SleeperGem backdoors developer laptops through three malicious RubyGems packages</a></li>
+        </ol>
+      </div>
     </section>
     <section class="project-detail-layout" aria-label="Brief content">
-      <article class="resume-section">
+      <article class="resume-section" id="priority">
         <div class="correction-banner">
           <strong>Correction and transparency note:</strong> no correction was required carrying forward from the July 18&ndash;19 weekend edition, that edition's KEV rollup and ledger stand as published. This edition adds no new KEV entries; the federal remediation deadlines for CVE-2026-15409 and CVE-2026-15410 (SonicWall SMA1000) already passed on July 17, 2026, and are carried forward from the July 17 daily edition, not re-verified as new today.
         </div>
         <h2>1. Most Time-Sensitive Item</h2>
         <div class="priority-alert">
           <span class="alert-tag">Priority action</span>
-          <p><strong>If you run SonicWall SMA1000, patching is no longer the finish line, incident response is.</strong></p>
-          <p>Volexity's July 17, 2026 forensic writeup confirms a threat actor it tracks as <strong>UTA0533</strong> exploited CVE-2026-15409 and CVE-2026-15410 as zero-days as far back as <strong>June 22, 2026</strong>, three weeks before SonicWall's public disclosure and patch release on July 14. That means the July 17 federal remediation deadline (already past as of this edition) only closes the vulnerability, it does not undo any compromise that happened before the patch existed. Volexity's report includes concrete indicators of compromise, unexpected files in <code>/var/tmp</code> and <code>/tmp</code>, unexpected routes in <code>/var/lib/unit/conf.json</code>, and unexplained setuid binaries found via <code>find / -perm -4000</code>, that organizations running affected SMA1000 models (6210, 7210, 8200) should hunt for now, not assume patching alone resolved.</p>
+          <p><strong>If you run SonicWall SMA1000, patching is no longer the finish line. Incident response is.</strong></p>
+          <p>Volexity's July 17, 2026 forensic writeup confirms a threat actor it tracks as <strong>UTA0533</strong> exploited CVE-2026-15409 and CVE-2026-15410 as zero-days as far back as <strong>June 22, 2026</strong>, three weeks before SonicWall's public disclosure and patch release on July 14. The July 17 federal remediation deadline, already past as of this edition, only closes the vulnerability. It does not undo whatever happened in the three weeks before a patch existed.</p>
+          <span class="meta-label">What this means</span>
+          <p>For leaders: this is an incident-response decision, not a patch ticket, for any SMA1000 (6210, 7210, 8200) that was internet-facing before July 14. For defenders: Volexity's report lists concrete indicators of compromise, unexpected files in <code>/var/tmp</code> and <code>/tmp</code>, unexpected routes in <code>/var/lib/unit/conf.json</code>, and unexplained setuid binaries found via <code>find / -perm -4000</code>. Hunt for those now rather than assuming the patch alone resolved it.</p>
+          <div class="recommendation"><strong>Recommendation:</strong> Patch first, then run the compromise checks above against every affected appliance regardless of patch status, and treat any hit as a live incident, not a cleanup task.</div>
         </div>
       </article>
-      <article class="resume-section">
+      <article class="resume-section" id="kev">
         <h2>2. Critical Vulnerabilities: KEV Status</h2>
         <p>No new CISA Known Exploited Vulnerabilities Catalog entries were identified since the July 16, 2026 batch (CVE-2026-58644, CVE-2026-39808, CVE-2026-25089), which was verified in the July 17 daily edition and carried into the July 18&ndash;19 weekend rollup. The table below is unchanged from that edition and is included for continuity, not as newly verified today.</p>
         <table class="brief-table">
@@ -164,13 +195,15 @@
         </table>
         <p style="color: var(--muted); font-size: 0.85rem;">CVSS is shown as a reference point only. Active exploitation status, not score, drives the priority order above.</p>
         <p style="color: var(--muted); font-size: 0.85rem;">CVSS values for CVE-2026-15409 and CVE-2026-15410 were reconfirmed directly against the <a href="https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-15409" target="_blank" rel="noopener noreferrer">NVD CVE API</a> this session and remain unchanged from the July 17 edition.</p>
+        <div class="recommendation"><strong>Recommendation:</strong> Treat "no new additions" as a working assumption, not a guarantee, the live catalog was unreachable this session. Confirm directly against the catalog before citing this list as sole justification in an audit response.</div>
       </article>
-      <article class="resume-section">
+      <article class="resume-section" id="sleepergem">
         <h2>3. Beyond KEV: SleeperGem Targets Developer Laptops Through RubyGems</h2>
         <p>Not every risk this week carries a CVE. Between July 18 and July 19, 2026, three RubyGems packages, <code>git_credential_manager</code> (versions 2.8.0 through 2.8.3), <code>Dendreo</code> (1.1.3, 1.1.4), and <code>fastlane-plugin-run_tests_firebase_testlab</code> (0.3.2), were published to RubyGems.org with malicious code, in a campaign researchers named <strong>SleeperGem</strong>. The <code>git_credential_manager</code> package specifically impersonates Microsoft's official Git Credential Manager; the other two had been dormant for years before receiving these updates.</p>
-        <p>Per <a href="https://www.stepsecurity.io/blog/sleepergem-compromised-rubygems-drop-persistent-backdoor" target="_blank" rel="noopener noreferrer">StepSecurity's runtime analysis</a>, the malicious code deliberately checks for around 30 CI-platform environment variables (GitHub Actions, GitLab CI, CircleCI, and others) and exits immediately if any are found, meaning the attack is invisible in most automated pipeline scans and is built specifically to run on developer laptops. Where it does run, it downloads a second-stage payload from an attacker-controlled Forgejo host, drops a persistent daemon, installs both systemd and cron persistence under the name <code>git-credential-manager</code>, and probes for passwordless sudo to plant a setuid root shell.</p>
-        <p>StepSecurity credits <a href="https://www.aikido.dev/blog/sleepergem-rubygems-supply-chain-attack" target="_blank" rel="noopener noreferrer">Aikido Security</a> as the researchers who first discovered and named this campaign; that original write-up was not independently opened this session, so its specific claims are not separately verified here beyond what StepSecurity's own runtime analysis independently confirmed.</p>
-        <p><strong>Action for developers:</strong> check Gemfile.lock for the affected versions listed above, and if found, treat the machine and every credential reachable from it as compromised, remove <code>~/.local/share/gcm/</code>, the matching systemd user service and cron entry, check for a setuid shell at <code>/usr/local/sbin/ping6</code>, and rotate credentials before reinstalling a clean gem version.</p>
+        <span class="meta-label">What this means</span>
+        <p>Per <a href="https://www.stepsecurity.io/blog/sleepergem-compromised-rubygems-drop-persistent-backdoor" target="_blank" rel="noopener noreferrer">StepSecurity's runtime analysis</a>, the malicious code deliberately checks for around 30 CI-platform environment variables (GitHub Actions, GitLab CI, CircleCI, and others) and exits immediately if any are found. That means the attack is invisible to most automated pipeline scans and is built specifically to run on developer laptops. Where it does run: a second-stage payload from an attacker-controlled Forgejo host, a persistent daemon, systemd and cron persistence under the name <code>git-credential-manager</code>, and a probe for passwordless sudo to plant a setuid root shell.</p>
+        <p style="color: var(--muted); font-size: 0.85rem;">StepSecurity credits <a href="https://www.aikido.dev/blog/sleepergem-rubygems-supply-chain-attack" target="_blank" rel="noopener noreferrer">Aikido Security</a> as the researchers who first discovered and named this campaign; that original write-up was not independently opened this session, so its specific claims are not separately verified here beyond what StepSecurity's own runtime analysis independently confirmed.</p>
+        <div class="recommendation"><strong>Recommendation:</strong> Check Gemfile.lock for the versions above. If found, treat the machine and every credential reachable from it as compromised: remove <code>~/.local/share/gcm/</code>, the matching systemd user service and cron entry, check for a setuid shell at <code>/usr/local/sbin/ping6</code>, rotate credentials, then reinstall a clean gem version.</div>
       </article>
       <article class="resume-section">
         <h2>4. Applicable Frameworks: In Accordance With Authority Index</h2>
