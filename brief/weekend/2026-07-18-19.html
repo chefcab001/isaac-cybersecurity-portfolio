@@ -87,11 +87,11 @@
 
   <div class="ledger">
     <div class="ledger-head"><span>Source Validation Ledger</span><span>Mandatory Source Currency Validation Module</span></div>
-    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">10 of 10 CISA KEV additions, July 13&ndash;19</span><span class="ledger-basis">CISA + NVD, checked this session</span></div>
-    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">CitrixBleed 2 (CVE-2025-5777) active DragonForce ransomware chain</span><span class="ledger-basis">Huntress, primary source, checked this session</span></div>
-    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">"Helix" data-extortion group targeting SharePoint identities</span><span class="ledger-basis">ReliaQuest, primary source, checked this session</span></div>
-    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">Zimbra Classic Web Client stored XSS, no CVE assigned yet</span><span class="ledger-basis">Zimbra vendor bulletin, checked this session</span></div>
-    <div class="ledger-row"><span class="badge badge-moderate">Moderate</span><span class="ledger-item">WP-SHELLSTORM campaign CVE usage (CVE-2026-3844, CVE-2026-48907)</span><span class="ledger-basis">secondary source citing named research firm, not independently opened</span></div>
+    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">10 of 10 CISA KEV additions, July 13&ndash;19</span><span class="ledger-basis"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA KEV Catalog</a> + <a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NVD</a>, checked this session</span></div>
+    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">CitrixBleed 2 (CVE-2025-5777) active DragonForce ransomware chain</span><span class="ledger-basis"><a href="https://www.huntress.com/blog/citrixbleed-2-dragonforce-ransomware" target="_blank" rel="noopener noreferrer">Huntress</a>, primary source, checked this session</span></div>
+    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">"Helix" data-extortion group targeting SharePoint identities</span><span class="ledger-basis"><a href="https://reliaquest.com/blog/threat-spotlight-helix-new-name-in-data-extortion-ecosystem/" target="_blank" rel="noopener noreferrer">ReliaQuest</a>, primary source, checked this session</span></div>
+    <div class="ledger-row"><span class="badge badge-verified">Verified</span><span class="ledger-item">Zimbra Classic Web Client stored XSS, no CVE assigned yet</span><span class="ledger-basis"><a href="https://wiki.zimbra.com/wiki/Zimbra_Releases/10.1.19" target="_blank" rel="noopener noreferrer">Zimbra vendor bulletin</a>, checked this session</span></div>
+    <div class="ledger-row"><span class="badge badge-moderate">Moderate</span><span class="ledger-item">WP-SHELLSTORM campaign CVE usage (CVE-2026-3844, CVE-2026-48907)</span><span class="ledger-basis"><a href="https://www.esecurityplanet.com/threats/wp-shellstorm-exposed-hackers-backdoored-thousands-of-wordpress-websites/" target="_blank" rel="noopener noreferrer">secondary source</a> citing named research firm, not independently opened</span></div>
     <div class="ledger-row"><span class="badge badge-unconfirmed">Unconfirmed</span><span class="ledger-item">Storm-2603/Warlock attribution to SharePoint exploitation</span><span class="ledger-basis">not checked against a primary source, retained as an open question only</span></div>
   </div>
 
@@ -105,47 +105,47 @@
   <h2>1. Most Time-Sensitive Item</h2>
   <div class="priority">
     <div class="tag">Priority Action</div>
-    <p><strong>CVE-2025-5777 &mdash; Citrix NetScaler ADC / Gateway ("CitrixBleed 2").</strong> Already in the CISA KEV Catalog since July 2025, and CISA's own catalog lists this entry's known ransomware use as <strong>"Known,"</strong> a stronger designation than anything newly added this week. Huntress independently confirmed this week that an initial access broker is chaining this vulnerability through privilege escalation into DragonForce ransomware deployment, six confirmed intrusions across unrelated organizations in the first half of 2026. If you run internet-facing Citrix NetScaler and haven't confirmed this patch and rotated sessions, treat it as equal or higher priority than anything in the table below, regardless of its older KEV date.</p>
+    <p><strong>CVE-2025-5777 &mdash; Citrix NetScaler ADC / Gateway ("CitrixBleed 2").</strong> Already in the CISA KEV Catalog since July 2025, and CISA's own catalog lists this entry's known ransomware use as <strong>"Known,"</strong> a stronger designation than anything newly added this week. <a href="https://www.huntress.com/blog/citrixbleed-2-dragonforce-ransomware" target="_blank" rel="noopener noreferrer">Huntress independently confirmed</a> this week that an initial access broker is chaining this vulnerability through privilege escalation into DragonForce ransomware deployment, six confirmed intrusions across unrelated organizations in the first half of 2026. If you run internet-facing Citrix NetScaler and haven't confirmed this patch and rotated sessions, treat it as equal or higher priority than anything in the table below, regardless of its older KEV date.</p>
   </div>
 
   <h2>2. Critical Vulnerabilities &mdash; Weekly KEV Rollup (July 13&ndash;19)</h2>
   <p>CISA Known Exploited Vulnerabilities Catalog, all ten entries added during the reporting window. CVSS 3.1 scores from NVD, both re-verified against live sources this session.</p>
   <table>
     <tr><th>Date Added</th><th>CVE</th><th>Product</th><th>CVSS</th><th>Severity</th></tr>
-    <tr><td>Jul 14</td><td>CVE-2026-15409</td><td>SonicWall SMA1000</td><td>10.0</td><td class="sev-crit">Critical</td></tr>
-    <tr><td>Jul 16</td><td>CVE-2026-58644</td><td>Microsoft SharePoint</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
-    <tr><td>Jul 16</td><td>CVE-2026-25089</td><td>Fortinet FortiSandbox</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
-    <tr><td>Jul 16</td><td>CVE-2026-39808</td><td>Fortinet FortiSandbox</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
-    <tr><td>Jul 15</td><td>CVE-2026-46817</td><td>Oracle E-Business Suite</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
-    <tr><td>Jul 14</td><td>CVE-2026-56155</td><td>Microsoft AD FS</td><td>7.8</td><td class="sev-high">High</td></tr>
-    <tr><td>Jul 15</td><td>CVE-2023-4346</td><td>KNX Protocol</td><td>7.5</td><td class="sev-high">High</td></tr>
-    <tr><td>Jul 14</td><td>CVE-2026-15410</td><td>SonicWall SMA1000</td><td>7.2</td><td class="sev-high">High</td></tr>
-    <tr><td>Jul 14</td><td>CVE-2026-56164</td><td>Microsoft SharePoint Server</td><td>5.3</td><td class="sev-med">Medium</td></tr>
-    <tr><td>Jul 13</td><td>CVE-2008-4128</td><td>Cisco IOS</td><td>4.3</td><td class="sev-med">Medium</td></tr>
+    <tr><td>Jul 14</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-15409" target="_blank" rel="noopener noreferrer">CVE-2026-15409</a></td><td>SonicWall SMA1000</td><td>10.0</td><td class="sev-crit">Critical</td></tr>
+    <tr><td>Jul 16</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-58644" target="_blank" rel="noopener noreferrer">CVE-2026-58644</a></td><td>Microsoft SharePoint</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
+    <tr><td>Jul 16</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25089" target="_blank" rel="noopener noreferrer">CVE-2026-25089</a></td><td>Fortinet FortiSandbox</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
+    <tr><td>Jul 16</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-39808" target="_blank" rel="noopener noreferrer">CVE-2026-39808</a></td><td>Fortinet FortiSandbox</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
+    <tr><td>Jul 15</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46817" target="_blank" rel="noopener noreferrer">CVE-2026-46817</a></td><td>Oracle E-Business Suite</td><td>9.8</td><td class="sev-crit">Critical</td></tr>
+    <tr><td>Jul 14</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-56155" target="_blank" rel="noopener noreferrer">CVE-2026-56155</a></td><td>Microsoft AD FS</td><td>7.8</td><td class="sev-high">High</td></tr>
+    <tr><td>Jul 15</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-4346" target="_blank" rel="noopener noreferrer">CVE-2023-4346</a></td><td>KNX Protocol</td><td>7.5</td><td class="sev-high">High</td></tr>
+    <tr><td>Jul 14</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-15410" target="_blank" rel="noopener noreferrer">CVE-2026-15410</a></td><td>SonicWall SMA1000</td><td>7.2</td><td class="sev-high">High</td></tr>
+    <tr><td>Jul 14</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-56164" target="_blank" rel="noopener noreferrer">CVE-2026-56164</a></td><td>Microsoft SharePoint Server</td><td>5.3</td><td class="sev-med">Medium</td></tr>
+    <tr><td>Jul 13</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2008-4128" target="_blank" rel="noopener noreferrer">CVE-2008-4128</a></td><td>Cisco IOS</td><td>4.3</td><td class="sev-med">Medium</td></tr>
   </table>
 
   <h2>3. Beyond KEV &mdash; Actively Exploited, Confirmed Against Primary Sources</h2>
   <p>A KEV-only view misses two categories every cycle: vulnerabilities under active exploitation that CISA hasn't catalogued yet, and older KEV entries seeing renewed activity. Both are confirmed here against each source's own primary publication, not a news aggregator.</p>
   <table>
     <tr><th>CVE</th><th>Product</th><th>Status</th></tr>
-    <tr><td>CVE-2026-1207</td><td>Django (GeoDjango / PostGIS)</td><td>Not in CISA KEV. Exploited since Feb 26, 2026, per CrowdSec.</td></tr>
-    <tr><td>CVE-2026-3844</td><td>WordPress Breeze plugin</td><td>Not in CISA KEV. Used against 45,000+ sites in the WP-SHELLSTORM campaign.</td></tr>
-    <tr><td>CVE-2025-5777</td><td>Citrix NetScaler ("CitrixBleed 2")</td><td>In KEV since July 2025. Renewed DragonForce ransomware activity this week.</td></tr>
-    <tr><td>CVE-2026-48907</td><td>Joomla JCE Editor</td><td>In KEV since June 16, 2026. ~25,195 sites compromised in WP-SHELLSTORM.</td></tr>
+    <tr><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-1207" target="_blank" rel="noopener noreferrer">CVE-2026-1207</a></td><td>Django (GeoDjango / PostGIS)</td><td>Not in CISA KEV. Exploited since Feb 26, 2026, per <a href="https://www.crowdsec.net/vulntracking-report/cve-2026-1207" target="_blank" rel="noopener noreferrer">CrowdSec</a>.</td></tr>
+    <tr><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-3844" target="_blank" rel="noopener noreferrer">CVE-2026-3844</a></td><td>WordPress Breeze plugin</td><td>Not in CISA KEV. Used against 45,000+ sites in the <a href="https://www.esecurityplanet.com/threats/wp-shellstorm-exposed-hackers-backdoored-thousands-of-wordpress-websites/" target="_blank" rel="noopener noreferrer">WP-SHELLSTORM campaign</a>.</td></tr>
+    <tr><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-5777" target="_blank" rel="noopener noreferrer">CVE-2025-5777</a></td><td>Citrix NetScaler ("CitrixBleed 2")</td><td>In KEV since July 2025. Renewed <a href="https://www.huntress.com/blog/citrixbleed-2-dragonforce-ransomware" target="_blank" rel="noopener noreferrer">DragonForce ransomware activity</a> this week.</td></tr>
+    <tr><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48907" target="_blank" rel="noopener noreferrer">CVE-2026-48907</a></td><td>Joomla JCE Editor</td><td>In KEV since June 16, 2026. ~25,195 sites compromised in <a href="https://www.esecurityplanet.com/threats/wp-shellstorm-exposed-hackers-backdoored-thousands-of-wordpress-websites/" target="_blank" rel="noopener noreferrer">WP-SHELLSTORM</a>.</td></tr>
   </table>
 
   <h2>4. Emerging Threats</h2>
   <h3>"Helix" data-extortion group</h3>
-  <p>ReliaQuest disclosed a previously unreported extortion group, tracked as Helix, running an identity-driven campaign against Microsoft 365 environments. A first compromised identity is used via vishing and device-code phishing to quietly enumerate and bulk-download SharePoint document libraries over several days; a second, separately compromised identity is used later, sometimes weeks later, solely to deliver the extortion demand internally over Teams and email. ReliaQuest notes possible technique and infrastructure overlap with the BlackFile and ShinyHunters extortion ecosystem, its own assessment, not independently corroborated here.</p>
+  <p><a href="https://reliaquest.com/blog/threat-spotlight-helix-new-name-in-data-extortion-ecosystem/" target="_blank" rel="noopener noreferrer">ReliaQuest disclosed</a> a previously unreported extortion group, tracked as Helix, running an identity-driven campaign against Microsoft 365 environments. A first compromised identity is used via vishing and device-code phishing to quietly enumerate and bulk-download SharePoint document libraries over several days; a second, separately compromised identity is used later, sometimes weeks later, solely to deliver the extortion demand internally over Teams and email. ReliaQuest notes possible technique and infrastructure overlap with the BlackFile and ShinyHunters extortion ecosystem, its own assessment, not independently corroborated here.</p>
   <h3>Zimbra Classic Web Client &mdash; stored XSS</h3>
-  <p>Zimbra shipped ZCS 10.1.19 on July 7, 2026, fixing a stored cross-site scripting flaw in the Classic Web Client where a crafted email could execute script in a victim's session. No CVE identifier has been assigned by the vendor as of this check. Organizations still on Classic Web Client should patch or move affected users to the unaffected Modern UI.</p>
+  <p><a href="https://wiki.zimbra.com/wiki/Zimbra_Releases/10.1.19" target="_blank" rel="noopener noreferrer">Zimbra shipped ZCS 10.1.19</a> on July 7, 2026, fixing a stored cross-site scripting flaw in the Classic Web Client where a crafted email could execute script in a victim's session. No CVE identifier has been assigned by the vendor as of this check. Organizations still on Classic Web Client should patch or move affected users to the unaffected Modern UI.</p>
 
   <h2>5. Active Nation-State Threat Campaign</h2>
-  <p>CISA, NSA, FBI, and DC3, joined by 14 international partner agencies, released a joint advisory on July 14 attributing global targeting of vulnerable public-facing networking devices to Russian FSB Center 16, with emphasis on communications, defense industrial base, energy, financial services, government, and healthcare sectors.</p>
+  <p>CISA, NSA, FBI, and DC3, joined by 14 international partner agencies, released a <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener noreferrer">joint advisory (AA26-194A)</a> on July 14 attributing global targeting of vulnerable public-facing networking devices to Russian FSB Center 16, with emphasis on communications, defense industrial base, energy, financial services, government, and healthcare sectors.</p>
 
   <h2>6. Applicable Frameworks</h2>
   <div class="framework"><span class="fname">CISA Binding Operational Directive (BOD) 26-04</span><div class="fstatus">Sets the federal remediation deadlines above for FCEB agencies &middot; verified current as of July 19, 2026</div></div>
-  <div class="framework"><span class="fname">CISA Known Exploited Vulnerabilities Catalog</span><div class="fstatus">Authoritative source for Section 2, not a comprehensive vulnerability database &middot; verified current as of July 19, 2026</div></div>
+  <div class="framework"><span class="fname"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA Known Exploited Vulnerabilities Catalog</a></span><div class="fstatus">Authoritative source for Section 2, not a comprehensive vulnerability database &middot; verified current as of July 19, 2026</div></div>
   <div class="framework"><span class="fname">NIST SP 800-53, Release 5.2.0</span><div class="fstatus">Current control baseline release &middot; verified current as of July 19, 2026</div></div>
   <div class="framework"><span class="fname">NIST CSF 2.0</span><div class="fstatus">Verified current; no newer core version identified this session</div></div>
 
