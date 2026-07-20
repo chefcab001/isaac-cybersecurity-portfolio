@@ -40,6 +40,12 @@
     .status-verified { background: rgba(97, 210, 196, 0.14); color: var(--green); }
     .status-moderate { background: rgba(246, 199, 104, 0.14); color: var(--gold); }
     .status-unconfirmed { background: rgba(248, 113, 113, 0.14); color: #f87171; }
+    .tier-tag { font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; white-space: nowrap; margin-right: 6px; display: inline-block; }
+    .tier-gov { background: rgba(56, 189, 248, 0.16); color: var(--teal); }
+    .tier-vendor { background: rgba(246, 199, 104, 0.16); color: var(--gold); }
+    .tier-independent { background: rgba(154, 168, 192, 0.2); color: var(--muted); }
+    .ledger-key { font-size: 11.5px; color: var(--muted); padding: 10px 16px; border-top: 1px solid var(--line); }
+    .ledger-key span { margin-right: 14px; }
 
     .priority-alert {
       background: rgba(248, 113, 113, 0.08);
@@ -106,17 +112,22 @@
         <div class="ledger-row">
           <span class="status-tag status-verified">Verified</span>
           <span class="ledger-item">7 of 7 CISA KEV additions, July 13–15</span>
-          <span class="ledger-note"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA</a> + <a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NVD</a>, checked this session</span>
+          <span class="ledger-note"><span class="tier-tag tier-gov">Gov / Official</span><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA</a> + <a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NVD</a>, checked this session</span>
         </div>
         <div class="ledger-row">
           <span class="status-tag status-moderate">Moderate</span>
           <span class="ledger-item">CVE-2026-56164 severity characterization</span>
-          <span class="ledger-note"><a href="https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-56164" target="_blank" rel="noopener noreferrer">Microsoft</a> 5.3 vs <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-56164" target="_blank" rel="noopener noreferrer">NVD</a> 9.8 — unresolved</span>
+          <span class="ledger-note"><span class="tier-tag tier-vendor">Vendor + Gov</span><a href="https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-56164" target="_blank" rel="noopener noreferrer">Microsoft</a> 5.3 vs <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-56164" target="_blank" rel="noopener noreferrer">NVD</a> 9.8 — unresolved</span>
         </div>
         <div class="ledger-row">
           <span class="status-tag status-unconfirmed">Unconfirmed</span>
           <span class="ledger-item">MITRE CWE mapping, not re-verified this session</span>
           <span class="ledger-note">flagged, not asserted as current</span>
+        </div>
+        <div class="ledger-key">
+          <span class="tier-tag tier-gov">Gov / Official</span>CISA, NIST, MITRE, NVD &mdash; federal or standards-body authority.
+          <span class="tier-tag tier-vendor">Vendor Advisory</span>The affected product's own vendor &mdash; authoritative for that product only.
+          <span class="tier-tag tier-independent">Independent Vendor</span>Private security research or threat-intel firm &mdash; corroborated and attributed, not government-confirmed.
         </div>
       </div>
     </section>
