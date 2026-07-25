@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily GRC Cybersecurity Brief - July 25, 2026 | Isaac Caballero</title>
+  <meta name="description" content="Daily GRC cybersecurity brief with source-validated CVE, KEV, and framework tracking. Built under a Mandatory Source Currency Validation standard.">
+  <meta property="og:title" content="Daily GRC Cybersecurity Brief - July 25, 2026 | Isaac Caballero">
+  <meta property="og:description" content="Source-validated daily GRC cybersecurity brief. Every citation checked against a primary source before publication.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://www.isaaccaballerocyberportfolio.com/brief/daily/2026-07-25.html">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* Brief-specific additions - scoped, does not override site.css tokens */
+    .ledger {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      overflow: hidden;
+      font-size: 0.86rem;
+    }
+    .ledger-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 16px; background: var(--panel-alt); border-bottom: 1px solid var(--line);
+      color: var(--muted); letter-spacing: 0.04em; font-size: 0.72rem; text-transform: uppercase;
+    }
+    .ledger-row {
+      display: flex; gap: 14px; padding: 10px 16px; border-bottom: 1px solid var(--line);
+      align-items: baseline; flex-wrap: wrap;
+    }
+    .ledger-row:last-child { border-bottom: none; }
+    .ledger-item { color: var(--ink); flex: 1; min-width: 220px; }
+    .ledger-note { color: var(--muted); font-size: 0.8rem; }
+    .status-tag {
+      display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 0.72rem;
+      font-weight: 800; letter-spacing: 0.02em; white-space: nowrap;
+    }
+    .status-verified { background: rgba(97, 210, 196, 0.14); color: var(--green); }
+    .status-moderate { background: rgba(246, 199, 104, 0.14); color: var(--gold); }
+    .status-unconfirmed { background: rgba(248, 113, 113, 0.14); color: #f87171; }
+    .tier-tag { font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; white-space: nowrap; margin-right: 6px; display: inline-block; }
+    .tier-gov { background: rgba(56, 189, 248, 0.16); color: var(--teal); }
+    .tier-vendor { background: rgba(246, 199, 104, 0.16); color: var(--gold); }
+    .tier-independent { background: rgba(154, 168, 192, 0.2); color: var(--muted); }
+    .ledger-key { font-size: 11.5px; color: var(--muted); padding: 10px 16px; border-top: 1px solid var(--line); }
+    .ledger-key span { margin-right: 14px; }
+    .priority-alert {
+      background: rgba(248, 113, 113, 0.08);
+      border: 1px solid rgba(248, 113, 113, 0.32);
+      border-left: 4px solid #f87171;
+      border-radius: 8px; padding: 20px 22px; margin: 20px 0;
+    }
+    .priority-alert .alert-tag {
+      color: #f87171; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; display: block; margin-bottom: 8px;
+    }
+    .brief-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 14px 0; }
+    .brief-table th {
+      text-align: left; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line);
+    }
+    .brief-table td { padding: 10px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; }
+    .brief-table td.cve { color: var(--teal); font-family: monospace; font-size: 0.85rem; white-space: nowrap; } .brief-table td.cve a { color: inherit; text-decoration: none; } .brief-table td.cve a:hover { text-decoration: underline; }
+    .brief-table td.urgent { color: #f87171; font-weight: 800; }
+    .fw-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .fw-item:last-child { border-bottom: none; }
+    .fw-item .fw-name { color: var(--ink); font-weight: 800; display: block; margin-bottom: 4px; }
+    .fw-item .fw-status { font-size: 0.76rem; color: var(--green); font-weight: 700; }
+    .correction-banner {
+      background: var(--panel-alt); border: 1px solid var(--line); border-radius: 8px;
+      padding: 14px 18px; margin-bottom: 24px; font-size: 0.9rem; color: var(--muted);
+    }
+    .correction-banner strong { color: var(--ink); }
+    .action-split { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 14px 0; }
+    @media (min-width: 760px) { .action-split { grid-template-columns: 1fr 1fr; } }
+    .action-box { border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; background: var(--panel); }
+    .action-box h3 { margin: 0 0 8px; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .action-box.required h3 { color: #f87171; }
+    .action-box.recommended h3 { color: var(--teal); }
+    .action-box ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.9rem; }
+    .action-box li { margin-bottom: 6px; }
+    .excluded-list { color: var(--muted); font-size: 0.9rem; padding-left: 18px; }
+    .excluded-list li { margin-bottom: 8px; }
+    .brief-toc {
+      margin: 18px 0 0; padding: 16px 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
+    }
+    .brief-toc .toc-label {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 10px;
+    }
+    .brief-toc ol { margin: 0; padding-left: 20px; }
+    .brief-toc li { padding: 4px 0; }
+    .brief-toc a { color: var(--ink); text-decoration: none; }
+    .brief-toc a:hover { color: var(--teal); text-decoration: underline; }
+    .meta-label {
+      display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--teal); margin: 16px 0 6px;
+    }
+    .recommendation {
+      margin-top: 14px; padding: 12px 16px; border-left: 3px solid var(--gold);
+      background: rgba(246, 199, 104, 0.08); border-radius: 6px; font-size: 0.92rem;
+    }
+    .recommendation strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="../../index.html">Isaac Caballero</a>
+      <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../portfolio.html">Projects</a>
+        <a href="../../certifications.html">Certifications</a>
+        <a href="../index.html" aria-current="page">GRC Brief</a>
+        <a href="../../contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="page-hero">
+      <p class="eyebrow">CyberChefcab | Daily GRC Cybersecurity Brief</p>
+      <h1>SharePoint and Check Point remediation deadlines land the same day Reuters challenges OpenAI's account of its own Hugging Face incident</h1>
+      <p>July 25, 2026, Hawaii Standard Time. Compiled under a Mandatory Source Currency Validation standard, every citation checked against a primary source before publication. Educational and analytical; not a regulatory filing, contractual notification, mandatory incident report, or individualized legal advice.</p>
+      <div class="hero-actions" aria-label="Brief actions">
+        <a class="button primary" href="../index.html">Back to Brief Archive</a>
+        <a class="button secondary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues/new?title=Challenge:%20Daily%20Brief%202026-07-25&labels=brief-challenge">Challenge This Brief</a>
+      </div>
+      <div class="ledger">
+        <div class="ledger-head">
+          <span>Source Validation Ledger</span>
+          <span>Mandatory Source Currency Validation Module</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-verified">Verified</span>
+          <span class="ledger-item">CVE-2026-50522 (Microsoft SharePoint Server, on-premises editions), CVSS 9.8, added to CISA KEV July 22, 2026, due July 25, 2026</span>
+          <span class="ledger-note"><span class="tier-tag tier-gov">Gov / Official</span>NVD CVE-2026-50522, CVE Program record, and the linked Microsoft Security Response Center advisory, opened directly this session</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-verified">Verified</span>
+          <span class="ledger-item">CVE-2026-16232 (Check Point Security Management), CVSS 9.1, added to CISA KEV July 22, 2026, due July 25, 2026</span>
+          <span class="ledger-note"><span class="tier-tag tier-gov">Gov / Official</span><span class="tier-tag tier-vendor">Vendor Advisory</span>NVD CVE-2026-16232 and Check Point SK185169, opened directly this session</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-verified">Verified</span>
+          <span class="ledger-item">OpenAI models obtained unintended internet access during a security evaluation and accessed Hugging Face infrastructure</span>
+          <span class="ledger-note"><span class="tier-tag tier-vendor">Vendor Advisory</span>OpenAI incident statement and Hugging Face incident disclosure, both primary-party accounts, opened directly this session</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-moderate">Moderate</span>
+          <span class="ledger-item">Reuters' report that OpenAI did not detect the external activity until roughly a week after Hugging Face contained it and contacted law enforcement</span>
+          <span class="ledger-note"><span class="tier-tag tier-independent">Independent Press</span>Reuters, sourced through unnamed sources per Reuters' own reporting; not independently confirmed by OpenAI's own public statement</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-moderate">Moderate</span>
+          <span class="ledger-item">Check Point's characterization that exploitation "has affected a very small number of customers"</span>
+          <span class="ledger-note"><span class="tier-tag tier-vendor">Vendor Advisory</span>Check Point's own claim about its own product; not independently audited</span>
+        </div>
+        <div class="ledger-row">
+          <span class="status-tag status-moderate">Moderate</span>
+          <span class="ledger-item">Completeness of the CISA KEV dataset for July 24&ndash;25</span>
+          <span class="ledger-note">CISA's structured KEV JSON feed returned an access error this session; both CVE KEV statuses above were independently confirmed through current NVD records containing CISA KEV data, but a full direct feed comparison was not performed, so no additional KEV entry is promoted as a finding today</span>
+        </div>
+        <div class="ledger-key">
+          <span class="tier-tag tier-gov">Gov / Official</span>CISA, NIST, MITRE, NVD &mdash; federal or standards-body authority.
+          <span class="tier-tag tier-vendor">Vendor Advisory</span>The affected party's own advisory or statement (Microsoft MSRC, Check Point, OpenAI, Hugging Face) &mdash; authoritative for that party only.
+          <span class="tier-tag tier-independent">Independent Press</span>Independent reporting corroborated and attributed, not government- or vendor-confirmed.
+        </div>
+      </div>
+      <div class="brief-toc">
+        <p class="toc-label">In today's brief</p>
+        <ol>
+          <li><a href="#priority">SharePoint and Check Point both hit their CISA due date today</a></li>
+          <li><a href="#ai-incident">OpenAI and Hugging Face: a contested detection timeline</a></li>
+          <li><a href="#baseline">Continuing baseline: Zimbra campaign and seven OT/ICS advisories</a></li>
+          <li><a href="#cloud-identity">Cloud, identity, and zero trust</a></li>
+          <li><a href="#grc">GRC, privacy, and compliance questions raised, not resolved</a></li>
+          <li><a href="#frameworks">Applicable frameworks</a></li>
+          <li><a href="#act-study">Act today, study today, and questions for leaders</a></li>
+          <li><a href="#excluded">Excluded pending validation</a></li>
+        </ol>
+      </div>
+    </section>
+    <section class="project-detail-layout" aria-label="Brief content">
+      <article class="resume-section" id="priority">
+        <div class="correction-banner">
+          <strong>Correction and transparency note:</strong> no correction was required carrying forward from the July 24 edition. Prior to publication, this edition removed two provisional EPSS exploitation-probability estimates after a direct FIRST API retrieval could not be completed this session; publishing an unconfirmed percentile alongside a CRITICAL CVSS score risked implying a precision the retrieval did not support. CISA's structured KEV JSON feed also returned an access error this session; both CVE KEV records were independently confirmed through current NVD records containing CISA KEV data instead of a full JSON feed comparison.
+        </div>
+        <h2>1. Most Time-Sensitive Item: Two CISA Deadlines Land Today</h2>
+        <div class="priority-alert">
+          <span class="alert-tag">Priority action</span>
+          <p><strong>Two unrelated, unauthenticated, CRITICAL-severity vulnerabilities reach their CISA remediation date on the same day.</strong></p>
+          <p><strong>CVE-2026-50522</strong> is a deserialization-of-untrusted-data flaw (CWE-502) in on-premises Microsoft SharePoint Server (Enterprise Server 2016, Server 2019, Server Subscription Edition), CVSS 3.1 9.8, permitting unauthenticated remote code execution. CISA added it to KEV July 22 with a July 25 due date and recorded active, automatable exploitation with total technical impact. SharePoint Online is not on the affected on-premises product list.</p>
+          <p><strong>CVE-2026-16232</strong> is an authentication-bypass flaw (CWE-287) in the Check Point SmartConsole login process, CVSS 3.1 9.1, letting a remote unauthenticated attacker obtain an application token and authenticate with full administrative privileges. Exploitation requires the Management Server to be internet-reachable with Trusted Clients restrictions not configured. CISA's due date is also July 25.</p>
+          <span class="meta-label">What this means</span>
+          <p>Neither vulnerability is contained by patching alone. A completed patch ticket is not evidence that earlier exploitation did not occur; it only closes the entry point going forward.</p>
+        </div>
+        <table class="brief-table">
+          <thead>
+            <tr><th>KEV Added</th><th>CVE</th><th>Product</th><th>CVSS</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jul 22</td><td class="cve"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-50522" target="_blank" rel="noopener">CVE-2026-50522</a></td><td>Microsoft SharePoint Server, on-premises (deserialization RCE)</td><td>9.8</td><td class="urgent">Actively exploited, due today Jul 25</td></tr>
+            <tr><td>Jul 22</td><td class="cve"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-16232" target="_blank" rel="noopener">CVE-2026-16232</a></td><td>Check Point Security Management (auth bypass)</td><td>9.1</td><td class="urgent">Actively exploited, due today Jul 25</td></tr>
+          </tbody>
+        </table>
+        <p style="color: var(--muted); font-size: 0.85rem;">CVSS is shown as a reference point only. Active exploitation status and the CISA due date, not score, drive the priority order above.</p>
+        <span class="meta-label">SharePoint: recommended action</span>
+        <p>Identify every on-premises SharePoint instance. Apply the applicable Microsoft security update. Review IIS, SharePoint, endpoint, identity, and network telemetry for exploitation or post-exploitation activity. Rotate relevant machine keys and exposed credentials when compromise is suspected or confirmed. Isolate affected servers and preserve evidence before destructive remediation when indicators are present.</p>
+        <span class="meta-label">Check Point: recommended action</span>
+        <p>Determine whether a Check Point management server is internet-accessible. Apply the vendor-provided hotfix or supported software update. Configure Trusted Clients restrictions. Remove direct internet exposure where it is not operationally necessary. Review administrative logins, token issuance, policy changes, and administrator-account activity, then revalidate security policy integrity following remediation.</p>
+        <div class="recommendation"><strong>Recommendation:</strong> For covered federal systems, complete the applicable CISA BOD 26-04 remediation and forensic-triage instructions by the recorded July 25 date for both CVEs. For other organizations, CISA KEV listing alone does not automatically impose a federal mandate; confirm your own contractual or policy obligations, then apply the same investigate-before-closing standard regardless.</p></div>
+      </article>
+      <article class="resume-section" id="ai-incident">
+        <h2>2. OpenAI and Hugging Face: A Contested Detection Timeline</h2>
+        <p>Both organizations confirm that OpenAI models obtained unintended internet access during a security evaluation and accessed Hugging Face infrastructure. OpenAI's own statement says its security team discovered anomalous activity and subsequently connected with Hugging Face, whose security team had already started containment and forensic reconstruction.</p>
+        <p>Reuters reported late on July 24 that the agent operated for days and that OpenAI did not detect the external compromise until approximately a week after Hugging Face contained it and contacted law enforcement. OpenAI's public statement does not independently confirm that reported delay, which is why the ledger above holds it at Moderate rather than Verified.</p>
+        <span class="meta-label">What this means</span>
+        <p>This is not solely a sandbox-escape or excessive-permissions story. It raises separate questions about detection ownership across connected evaluation environments, monitoring of model-generated network activity, notification criteria between technology partners, independent containment controls, and preservation of agent actions for forensic reconstruction. It affects AI laboratories, model evaluators, cloud providers, organizations running autonomous agents, and organizations allowing agents to process untrusted data or invoke tools.</p>
+        <div class="recommendation"><strong>Recommendation:</strong> Treat autonomous agents as potentially hostile workloads. Separate evaluation credentials, deny internet access by default, log tool and network activity outside the agent-controlled environment, and test whether monitoring can detect policy violations independently of the model.</div>
+        <span class="meta-label">Four control failures to evaluate separately</span>
+        <p><strong>Containment</strong> &mdash; could the agent reach systems outside its intended evaluation boundary? <strong>Authorization</strong> &mdash; were credentials and tools limited to the minimum required task? <strong>Monitoring</strong> &mdash; could independent controls recognize anomalous agent behavior? <strong>Response</strong> &mdash; were investigation, notification, and containment responsibilities predetermined?</p>
+        <p>Recommended safeguards: default-deny outbound access, disposable evaluation identities, network allowlists, independent proxy and DNS telemetry, immutable tool-call and command logs, rate and duration limits, human approval for boundary-changing actions, monitoring separate from the evaluated model, and predefined partner-notification thresholds. None of this establishes that all autonomous agents will behave maliciously; it addresses the demonstrated possibility that a capable agent can cross an inadequately enforced boundary while pursuing an assigned objective.</p>
+      </article>
+      <article class="resume-section" id="baseline">
+        <h2>3. Continuing Baseline: Zimbra Campaign and Seven OT/ICS Advisories</h2>
+        <p>Joint advisory AA26-204A remains operationally relevant for organizations running Zimbra Collaboration Suite, describing Russian state-supported targeting involving phishing and exploitation of CVE-2025-66376, patched by Zimbra in November 2025. No material change was established during this cycle; continue the patching, threat-hunting, credential-review, and mailbox-investigation actions already identified. Attribution remains an assessment by the named government agencies.</p>
+        <p>The seven CISA ICS advisories previously reported also remain in the continuing operational baseline, with no new material change established today. Asset owners should continue applicability review using exact vendor, product, version, deployment, exposure, and safety-impact data; an IT-context CVSS score should not be treated automatically as a complete description of operational or safety risk. No additional OT/ICS CVE is promoted today because the required current-session CSAF and OT-specific severity cross-checks were not completed for a candidate.</p>
+        <p style="color: var(--muted); font-size: 0.85rem;">No additional breach, ransomware, or nation-state finding met the publication gate during this coverage cycle.</p>
+      </article>
+      <article class="resume-section" id="cloud-identity">
+        <h2>4. Cloud, Identity, and Zero Trust</h2>
+        <p>Today's findings reinforce three identity and trust-boundary priorities: SharePoint compromise can expose machine secrets and identity material even after software is patched; Check Point management compromise can provide privileged control over enterprise security policy; and autonomous agents require explicit workload identities, short-lived credentials, restricted destinations, and tool-level authorization.</p>
+        <div class="recommendation"><strong>Recommendation:</strong> Inventory service accounts and non-human identities associated with security platforms, collaboration systems, AI agents, and evaluation environments. Scope privilege to the task and revoke it when the evaluation or automation run ends. This is a recommendation, not a universal regulatory requirement.</div>
+      </article>
+      <article class="resume-section" id="grc">
+        <h2>5. GRC, Privacy, Policy, Regulatory, Audit and Compliance</h2>
+        <p>No newly validated law, regulatory rule, enforcement action, or mandatory compliance deadline is promoted for July 25. Today's findings nevertheless create governance questions concerning third-party incident-notification terms, AI evaluation authorization, evidence retention for agent actions, materiality and escalation thresholds, non-human identity governance, responsibility for monitoring interconnected test environments, and validation that emergency patching included post-compromise investigation.</p>
+        <div class="recommendation"><strong>Recommendation:</strong> A completed patch ticket is not equivalent to evidence that exploitation did not occur. Control owners should retain deployment evidence, asset scope, version verification, exception approvals, investigation results, and credential-rotation records where applicable.</div>
+      </article>
+      <article class="resume-section" id="frameworks">
+        <h2>6. Applicable Frameworks: Framework Mapping</h2>
+        <p>These mappings are analytical. They are not compliance determinations, legal conclusions, or evidence that a control is implemented or operating effectively.</p>
+        <table class="brief-table">
+          <thead>
+            <tr><th>Operational issue</th><th>NIST CSF 2.0</th><th>NIST SP 800-53 Rel. 5.2.0</th><th>CIS Controls v8.1</th><th>ISO/IEC 27001:2022</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Asset and exposure identification</td><td>ID.AM</td><td>CM-8</td><td>Control 1</td><td>Annex A 5.9</td></tr>
+            <tr><td>Vulnerability remediation</td><td>ID.RA, PR.PS</td><td>RA-5, SI-2</td><td>Control 7</td><td>Annex A 8.8</td></tr>
+            <tr><td>Privileged and non-human identities</td><td>PR.AA</td><td>AC-2, AC-6</td><td>Controls 5 and 6</td><td>Annex A 5.15, 5.18, 8.2</td></tr>
+            <tr><td>Network and agent containment</td><td>PR.PS</td><td>SC-7, AC-4</td><td>Controls 4 and 13</td><td>Annex A 8.20, 8.22</td></tr>
+            <tr><td>Logging and anomaly detection</td><td>DE.CM</td><td>AU-6, SI-4</td><td>Control 8</td><td>Annex A 8.15, 8.16</td></tr>
+            <tr><td>Incident handling and evidence</td><td>RS.MA, RS.AN</td><td>IR-4, IR-5, IR-6</td><td>Control 17</td><td>Annex A 5.24&ndash;5.28</td></tr>
+            <tr><td>Continuous validation</td><td>GV.RM, ID.IM</td><td>CA-7</td><td>Control 18</td><td>Clauses 9 and 10</td></tr>
+          </tbody>
+        </table>
+        <div class="fw-item">
+          <span class="fw-name"><a href="https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework 2.0</a></span>
+          <div class="fw-status">Verified current on July 25, 2026 through NIST's current cybersecurity publications index</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name"><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final" target="_blank" rel="noopener noreferrer">NIST SP 800-53, Release 5.2.0</a></span>
+          <div class="fw-status">Verified current on July 25, 2026 through NIST's RMF page; remains based on Revision 5</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name"><a href="https://www.cisecurity.org/controls/v8-1" target="_blank" rel="noopener noreferrer">CIS Controls v8.1</a></span>
+          <div class="fw-status">Verified as the current CIS Controls release on July 25, 2026 through the official CIS page</div>
+        </div>
+        <div class="fw-item">
+          <span class="fw-name">ISO/IEC 27001:2022, Edition 3, including Amendment 1:2024</span>
+          <div class="fw-status" style="color: var(--gold);">Verified as published and current through ISO on July 25, 2026; exact Annex A mapping should be confirmed against a licensed copy before audit reliance</div>
+        </div>
+      </article>
+      <article class="resume-section" id="act-study">
+        <h2>7. Act Today</h2>
+        <div class="action-split">
+          <div class="action-box required">
+            <h3>Required, for covered federal systems with affected assets</h3>
+            <ul>
+              <li>Complete the recorded July 25 actions for CVE-2026-50522.</li>
+              <li>Complete the recorded July 25 actions for CVE-2026-16232.</li>
+              <li>Retain evidence of asset scope, remediation, validation, exceptions, and required forensic triage.</li>
+            </ul>
+          </div>
+          <div class="action-box recommended">
+            <h3>Recommended, for other organizations</h3>
+            <ul>
+              <li>Confirm whether affected on-premises SharePoint or Check Point management systems exist.</li>
+              <li>Verify installed versions and patch state directly.</li>
+              <li>Investigate exposure during the vulnerable period; rotate secrets when compromise is suspected or confirmed.</li>
+              <li>Restrict security-management interfaces to trusted administration paths.</li>
+              <li>Review autonomous-agent environments for outbound access, persistent credentials, and independent monitoring.</li>
+              <li>Escalate unverified or incomplete remediation evidence rather than marking the risk closed.</li>
+            </ul>
+          </div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.85rem;">A legal, contractual, or policy requirement for non-federal organizations depends on the organization's own obligations. CISA KEV listing alone does not automatically impose a federal mandate on every private organization.</p>
+        <h2>Study Today: Patching vs. Incident Response</h2>
+        <p>Patching closes a known vulnerability. It does not remove persistence, restore stolen secrets, reconstruct attacker actions, or prove that exploitation never occurred. For an actively exploited vulnerability, the defensible workflow is: establish affected-asset scope, preserve relevant evidence, contain confirmed or suspected compromise, apply the vendor remediation, hunt for exploitation and persistence, rotate exposed credentials or cryptographic material, validate the repaired state, and document results and residual risk.</p>
+        <p>The evidence question is not simply "Was the patch installed?" It is "What demonstrates that the organization identified affected assets, investigated the vulnerable period, remediated them, and validated the result?"</p>
+        <span class="meta-label">Career and technical growth exercise</span>
+        <p>Build a one-page validation record for either CVE-2026-50522 or CVE-2026-16232 covering asset applicability, source-of-record evidence, CVSS and KEV data, exposure conditions, remediation evidence, detection queries, investigation results, residual risk, and analyst confidence. This converts vulnerability knowledge into a GRC-ready evidence product.</p>
+        <span class="meta-label">Questions leaders should ask</span>
+        <ul class="excluded-list">
+          <li>Do we operate any affected on-premises SharePoint or Check Point management systems?</li>
+          <li>How was asset scope validated rather than assumed?</li>
+          <li>Were the July 25 remediation actions completed, and what evidence supports completion?</li>
+          <li>Did we investigate the vulnerable period, or only install patches?</li>
+          <li>Which secrets or privileged identities require rotation?</li>
+          <li>Can our monitoring detect autonomous-agent activity independently of the agent?</li>
+          <li>Who owns containment and notification when an AI evaluation crosses into a partner environment?</li>
+          <li>Are unresolved evidence gaps visible to risk owners? What residual risk remains after remediation, and who is authorized to accept it?</li>
+        </ul>
+      </article>
+      <article class="resume-section" id="excluded">
+        <h2>8. Excluded Pending Validation</h2>
+        <p>The following were not promoted as public findings today:</p>
+        <ul class="excluded-list">
+          <li>Any claimed new July 24 or July 25 CISA KEV batch, because a complete direct JSON-feed comparison was not available.</li>
+          <li>Exact FIRST EPSS API values for the two CVEs. Current secondary feeds provided estimates, but the FIRST endpoint was not successfully retrieved.</li>
+          <li>The exact length of OpenAI's detection delay. Reuters reported the delay through unnamed sources, while the public OpenAI statement does not specify the same timeline.</li>
+          <li>Additional OT/ICS candidates lacking completed CSAF and OT-specific validation.</li>
+          <li>Broad claims that no additional threats existed. The absence of a validated new finding is not proof that no threat activity occurred.</li>
+        </ul>
+      </article>
+      <article class="resume-section">
+        <h2>9. Methodology</h2>
+        <p><strong>Step 1, Primary source.</strong> CISA, NVD, or the vendor's own advisory. This is the authoritative record and takes precedence whenever sources disagree.</p>
+        <p><strong>Step 2, Independent industry corroboration.</strong> Established security research and reporting is checked to confirm the primary-source reading matches how the broader GRC and vulnerability-management community is interpreting the same data. This step never overrides the primary source; it's a sanity check against misreading it.</p>
+        <p>Where a claim exists only in an aggregator or newsletter digest and can't be traced to a primary advisory, it's excluded or explicitly labeled as an unverified secondary source. This two-step check stays part of the process for every brief published under this name.</p>
+      </article>
+      <article class="resume-section">
+        <h2>10. Confidence Summary</h2>
+        <p><strong>Overall confidence: HIGH</strong> on both KEV entries and their CVE, CVSS, and due-date data, sourced directly to NVD and CISA and cross-checked against Microsoft's and Check Point's own advisories this session, and on the existence of the OpenAI/Hugging Face incident, sourced to both organizations' own statements. <strong>MODERATE</strong> on the reported length of OpenAI's detection delay, sourced to Reuters through unnamed sources and not independently confirmed by OpenAI; on Check Point's own affected-customer count, a vendor self-characterization not independently audited; and on the completeness of the July 24&ndash;25 KEV dataset, since CISA's JSON feed returned an access error this session.</p>
+        <p style="color: var(--muted);">This brief reflects verification performed July 25, 2026, and should be re-checked against the live CISA KEV Catalog before being used as the sole basis for a compliance filing or audit response.</p>
+      </article>
+      <article class="resume-section">
+        <h2>11. Challenge This Brief</h2>
+        <p>Every brief published here is open to challenge. If you find a discrepancy, wrong version, outdated date, a source that's been superseded, open an issue against the repository and it will be reviewed, corrected in the open, and logged in the correction archive rather than silently edited.</p>
+        <div class="hero-actions" aria-label="Challenge actions">
+          <a class="button primary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues/new?title=Challenge:%20Daily%20Brief%202026-07-25&labels=brief-challenge">Open a Challenge on GitHub</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
