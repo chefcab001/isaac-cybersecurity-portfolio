@@ -21,7 +21,30 @@
     .entry-link { color: var(--teal); font-weight: 700; text-decoration: none; }
     .entry-link:hover { text-decoration: underline; }
     .entry-date { color: var(--muted); font-size: 0.85rem; }
-    .empty-note { color: var(--muted); font-style: italic; padding: 10px 0; }
+    .preview-card {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-alt);
+      padding: 16px;
+    }
+    .preview-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 8px 0 10px;
+      padding: 0;
+      list-style: none;
+    }
+    .preview-meta li {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 3px 8px;
+      background: var(--panel);
+    }
   </style>
 </head>
 <body>
@@ -55,8 +78,21 @@
     <section class="project-detail-layout" aria-label="Threat deep dive listings">
       <article class="resume-section">
         <h2>Published Deep Dives</h2>
-        <p class="empty-note">First deep dive will publish here once evidence collection and source validation are complete.</p>
-        <ul class="entry-list" aria-label="Deep dive entries"></ul>
+        <div class="preview-card">
+          <h3>
+            <a class="entry-link" href="2026-07-27-fairlife-ransomware-recovery.html">Fairlife's Ransomware Recovery: Why Restarting Production Does Not Mean the Incident Is Over</a>
+          </h3>
+          <ul class="preview-meta" aria-label="Deep dive metadata">
+            <li>Published: July 27, 2026</li>
+            <li>Classification: Ransomware</li>
+            <li>Classification: Operational Resilience</li>
+          </ul>
+          <p>
+            fairlife resumed most United States production, but company disclosures still indicate ongoing restoration and unresolved data-impact questions.
+            This deep dive separates company-confirmed facts, Reuters-reported threat-actor claims, and unresolved public-evidence gaps.
+          </p>
+          <a class="button primary" href="2026-07-27-fairlife-ransomware-recovery.html">Read Full Deep Dive</a>
+        </div>
       </article>
 
       <article class="resume-section">
