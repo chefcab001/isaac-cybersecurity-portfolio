@@ -112,11 +112,12 @@
       gap: 12px;
     }
     .brief-widget-image {
+      display: block;
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      max-width: 860px;
+      margin: 18px auto;
+      border-radius: 12px;
       border: 1px solid var(--line);
-      margin: 4px 0 16px;
     }
     @media (max-width: 640px) {
       .brief-widget { padding: 20px; }
@@ -191,6 +192,10 @@
         </div>
         <span class="brief-widget-date">July 31, 2026</span>
       </div>
+      <img
+        class="brief-widget-image"
+        src="assets/images/2026-07-31-daily-brief-feature.png"
+        alt="CyberChefcab Daily Cybersecurity and GRC Intelligence Brief for July 31, 2026">
       <h2 id="brief-widget-heading">Daily GRC Cybersecurity Brief</h2>
       <p class="brief-widget-headline">
         When AI Test Ranges Reach the Real World and Water-System PLCs Face Rising Pressure
