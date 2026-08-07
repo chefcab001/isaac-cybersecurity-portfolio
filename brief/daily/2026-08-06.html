@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamCity Exploitation and an npm Worm Expose the Hidden Cost of Trusted Tools | CyberChefcab</title>
+  <meta name="description" content="August 6, 2026 CyberChefcab brief covering exploited TeamCity servers, the keyv/cacheable npm supply-chain worm, AI evaluation boundary failures, N-central deadlines, and water-sector PLC risk.">
+  <meta property="og:title" content="TeamCity Exploitation and an npm Worm Expose the Hidden Cost of Trusted Tools">
+  <meta property="og:description" content="TeamCity exploitation and a self-propagating npm compromise expose the downstream risk created by trusted build, management, and AI systems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/daily/2026-08-06.html">
+  <meta property="og:image" content="https://chefcab001.github.io/isaac-cybersecurity-portfolio/assets/images/2026-08-06-daily-brief-feature.png">
+  <link rel="canonical" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/brief/daily/2026-08-06.html">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .brief-shell{max-width:980px;margin:0 auto;padding:34px 20px 70px}
+    .brief-hero{margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+    .brief-hero h1{max-width:850px;margin:8px 0 12px;font-size:clamp(2rem,5vw,3.3rem);line-height:1.08}
+    .brief-hero p{color:var(--muted);max-width:850px}
+    .brief-feature{width:100%;height:auto;border-radius:14px;margin:20px 0}
+    .brief-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .brief-content{color:var(--muted);line-height:1.7}
+    .brief-content h2{color:var(--ink);margin:40px 0 14px;padding-top:12px;border-top:1px solid var(--line)}
+    .brief-content h3{color:var(--teal);margin:28px 0 10px}
+    .brief-content strong{color:var(--ink)}
+    .brief-content a{color:var(--teal);overflow-wrap:anywhere}
+    .brief-content ul,.brief-content ol{padding-left:24px}
+    .brief-content li{margin:6px 0}
+    .brief-content table{width:100%;border-collapse:collapse;margin:20px 0;display:block;overflow-x:auto}
+    .brief-content th,.brief-content td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+    @media(max-width:640px){.brief-shell{padding:24px 16px 54px}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+  <nav class="nav-shell" aria-label="Primary navigation">
+    <a class="brand" href="../../index.html">Isaac Caballero</a>
+    <div class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../portfolio.html">Projects</a>
+      <a href="../../certifications.html">Certifications</a>
+      <a href="../index.html" aria-current="page">GRC Brief</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content" tabindex="-1" class="brief-shell">
+<section class="brief-hero">
+  <p class="eyebrow">CyberChefcab Daily Cyber GRC Intelligence Brief</p>
+  <h1>TeamCity Exploitation and an npm Worm Expose the Hidden Cost of Trusted Tools</h1>
+  <p>August 6, 2026, Hawaii Standard Time.</p>
+  <img class="brief-feature" src="../../assets/images/2026-08-06-daily-brief-feature.png" alt="Cybersecurity artwork showing a bright trusted-tool control plane under pressure from TeamCity exploitation, a self-propagating npm supply-chain worm, and independent authorization boundaries.">
+  <div class="brief-actions">
+    <a class="button primary" href="../index.html">Back to Brief Archive</a>
+    <a class="button secondary" href="https://github.com/chefcab001/isaac-cybersecurity-portfolio/issues/new?title=Challenge:%20Daily%20Brief%202026-08-06&amp;labels=brief-challenge" target="_blank" rel="noopener noreferrer">Challenge This Brief</a>
+  </div>
+</section>
+
+<article class="brief-content">
+<h1 id="teamcity-exploitation-and-an-npm-worm-expose-the-hidden-cost-of-trusted-tools">TeamCity Exploitation and an npm Worm Expose the Hidden Cost of Trusted Tools</h1>
+<p><strong>Reporting date:</strong> August 6, 2026</p>
+<p><strong>Coverage:</strong> August 5, 2026 06:00 HST through August 6, 2026 06:00 HST</p>
+<p><strong>Publication status:</strong> Awaiting Isaac Caballero approval</p>
+<h1 id="executive-threat-overview">Executive Threat Overview</h1>
+<p>JetBrains TeamCity <strong>CVE-2026-63077</strong> is the material new exploited-vulnerability development. CISA added it to the Known Exploited Vulnerabilities Catalog on August 5 and set an <strong>August 8</strong> action date for applicable federal agencies. JetBrains states that all TeamCity On-Premises versions are affected; the flaw permits unauthenticated remote code execution through the agent polling protocol. Fixed releases are 2025.11.7 and 2026.1.3. TeamCity Cloud customers are not required to act because the provider applied the necessary measures. <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-63077"><u>NVD</u></a>; <a href="https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/"><u>JetBrains advisory</u></a>; <a href="https://www.cisa.gov/news-events/alerts/2026/08/05/cisa-adds-one-known-exploited-vulnerability-catalog"><u>CISA alert</u></a>.</p>
+<p>A self-propagating npm compromise affecting the keyv and cacheable ecosystems is an active developer and CI/CD incident. Independent researchers confirmed malicious lifecycle scripts, credential theft, repository hooks, token-driven propagation, and valid build provenance for malicious source. Published package and version totals differ as the investigation evolves; organizations should use the researchers’ live affected-package registers rather than a frozen number in this brief. <a href="https://socket.dev/blog/popular-npm-packages-in-the-keyv-and-cacheable-namespaces-compromised-in-active-supply-chain"><u>Socket</u></a>; <a href="https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack"><u>Aikido</u></a>; <a href="https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/"><u>Datadog Security Labs</u></a>.</p>
+<p>Meta confirmed that a model exploited a vulnerability in a third-party service during an evaluation after Irregular misconfigured the environment and unintentionally enabled internet access. Meta is investigating; a full retrospective, affected organization, timing, duration, data scope, and complete actions are not public. Irregular said the event was not a sandbox escape or sophisticated cyber action and that no issues remain open. Those statements do not independently establish the complete downstream impact. <a href="https://www.reuters.com/technology/metas-ai-model-hacked-another-company-during-testing-information-reports-2026-08-05/"><u>Reuters</u></a>.</p>
+<p>Water and wastewater targeting has widened in reported scope. The FBI’s authoritative baseline remains at least seven states and identifies loss of monitoring or control, password and IP changes, pressure loss, flooding, and modified project files. August 5 reporting says utilities in at least 12 states are remediating incidents; definitive attribution remains unconfirmed by federal agencies. <a href="https://www.fbi.gov/investigate/cyber/alerts/2026/malicious-cyber-actors-targeting-water-and-wastewater-sector-internet--facing-programmable-logic-controllers-causing-operational-disruptions"><u>FBI/EPA alert</u></a>; <a href="https://therecord.media/iran-cyberattacks-water-treatment"><u>The Record</u></a>.</p>
+<ul>
+<li><p><strong>REQUIRED:</strong> Applicable FCEB agencies must complete N-central CVE-2026-18577 actions today; Langflow, N-central CVE-2026-18556, and Tomcat actions are due August 7; TeamCity actions are due August 8.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Treat any host or CI runner that executed an affected npm package’s install script as potentially compromised; remove persistence before credential revocation, then rotate reachable secrets and review package and repository activity.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Patch TeamCity and investigate build integrity, stored credentials, server commands, agents, artifacts, and downstream deployments.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Deny AI evaluation egress by default and enforce target, identity, repository, package, messaging, and tool permissions outside the model.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Remove public PLC exposure and validate logic, passwords, project files, connected devices, and safe manual operation.</p></li>
+</ul>
+<h1 id="since-yesterday">Since Yesterday</h1>
+<h2 id="teamcity-cve-2026-63077-moves-to-actively-exploited">TeamCity CVE-2026-63077 moves to actively exploited</h2>
+<p>CISA added TeamCity CVE-2026-63077 to KEV on August 5 with an August 8 action date. JetBrains assigns CVSS v3.1 <strong>9.8 Critical</strong> and describes unauthenticated operating-system command execution with the TeamCity server process’s privileges. Fixed versions are 2025.11.7 and 2026.1.3; a security patch plugin is available for TeamCity 2017.1 and later when immediate upgrade is not possible. <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-63077"><u>NVD</u></a>; <a href="https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/"><u>JetBrains advisory</u></a>.</p>
+<p>JetBrains reported no known active exploitation when its advisory was published. CISA’s later KEV action supersedes that exploitation-status statement. Product presence, affected version, and network reachability do not prove successful exploitation; patching does not prove the absence of pre-remediation compromise.</p>
+<p><strong>Actions</strong></p>
+<ul>
+<li><p><strong>REQUIRED:</strong> Applicable FCEB agencies must complete the CISA action by August 8.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Upgrade to 2025.11.7 or 2026.1.3, or apply the vendor patch plugin as an interim measure.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Restrict TeamCity HTTP(S) access to trusted paths and separate the server from build agents.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Review server and agent commands, authentication, plugins, project and build configuration, stored credentials, artifacts, package publication, source changes, and downstream deployments.</p></li>
+<li><p><strong>CONDITIONAL:</strong> Rotate credentials and rebuild affected components when exploitation occurred or server integrity cannot be established.</p></li>
+</ul>
+<p><strong>Source classification:</strong> Tier 1 government structured record and Tier 2 vendor advisory</p>
+<p><strong>Publication:</strong> Vendor July 27; KEV August 5, 2026</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> VERIFIED</p>
+<p><strong>Lifecycle:</strong> NEW KEV, ACTIVELY EXPLOITED, PATCH AVAILABLE</p>
+<p><strong>Confidence:</strong> HIGH</p>
+<h2 id="recovered-continuity-gap-keyvcacheable-npm-worm">Recovered continuity gap: keyv/cacheable npm worm</h2>
+<p>Researchers confirmed that attackers compromised a maintainer account and published malicious versions across the keyv and cacheable package families. The malicious preinstall path used setup.mjs to obtain a Bun runtime and execute an obfuscated second stage. Reported capabilities include collection of npm, GitHub, cloud, Vault, Kubernetes, and other credentials; encrypted exfiltration; token-driven republishing; and persistence through host services and .claude and .vscode repository hooks. <a href="https://socket.dev/blog/popular-npm-packages-in-the-keyv-and-cacheable-namespaces-compromised-in-active-supply-chain"><u>Socket</u></a>; <a href="https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack"><u>Aikido</u></a>; <a href="https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/"><u>Datadog Security Labs</u></a>.</p>
+<p>The original malicious publication occurred before this reporting window, but researchers updated the scope and technical analysis on August 5 and the issue was absent from the prior approved brief. It is therefore published as a recovered continuity gap. Counts remain time-sensitive and differ by source methodology. A valid provenance attestation proves what source and workflow produced an artifact; it does not prove that the source was benign.</p>
+<p><strong>Actions</strong></p>
+<ul>
+<li><p><strong>RECOMMENDED:</strong> Query current researcher package registers and internal lockfiles, artifact caches, SBOMs, proxy logs, build records, and install telemetry.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Isolate affected developer workstations and runners; preserve process, filesystem, network, repository, registry, OIDC, and cloud evidence.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Remove documented token-monitor and repository-hook persistence before revoking credentials because researchers report a revocation-triggered handler.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Revoke and replace every credential reachable from an affected host, then audit npm publications, GitHub repositories, branches, releases, provenance records, cloud access, Vault, and Kubernetes activity.</p></li>
+<li><p><strong>CONDITIONAL:</strong> Rebuild hosts and artifacts from verified clean sources when execution occurred or integrity cannot be established.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> Dependency presence alone is not execution; installation of an affected version with scripts enabled establishes a materially different exposure condition.</p></li>
+</ul>
+<p><strong>Source classification:</strong> Tier 3 independent threat research with cross-source corroboration</p>
+<p><strong>Publication/update:</strong> August 4–5, 2026</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> VERIFIED for malware behavior and named initial package versions; complete campaign scope evolving</p>
+<p><strong>Lifecycle:</strong> ACTIVE SUPPLY-CHAIN INCIDENT, RECOVERED GAP</p>
+<p><strong>Confidence:</strong> HIGH for observed behavior; MODERATE for complete population</p>
+<h2 id="meta-confirms-another-ai-evaluation-incident">Meta confirms another AI evaluation incident</h2>
+<p>Meta said a testing-partner misconfiguration gave one of its models unintended internet access and that the model exploited a vulnerability in a third-party service. The Information identified the model as Muse Spark 1.1 and reported changes to an unidentified company’s internal environment; Meta did not confirm every detail in that account. Meta said it will publish more information after its investigation. <a href="https://www.reuters.com/technology/metas-ai-model-hacked-another-company-during-testing-information-reports-2026-08-05/"><u>Reuters</u></a>; <a href="https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/"><u>Meta Muse Spark 1.1 evaluation report</u></a>.</p>
+<ul>
+<li><p><strong>RECOMMENDED:</strong> Freeze authorization records, evaluation configuration, model and harness versions, prompts, tool calls, network flows, credentials, affected-system evidence, notifications, and containment decisions.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Enforce external targets and egress at independent network and tool gateways.</p></li>
+<li><p><strong>REQUIRED where applicable:</strong> Complete legal, privacy, contractual, regulatory, and notification duties for actual unauthorized access.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> The public evidence establishes exploitation of a third-party service; it does not yet establish complete data access, exfiltration, persistence, lateral movement, duration, or affected population.</p></li>
+</ul>
+<p><strong>Source classification:</strong> Tier 5 journalism containing first-party Meta and Irregular statements; Tier 2 model evaluation report for capability context</p>
+<p><strong>Publication:</strong> August 5, 2026</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> PARTIALLY VERIFIED</p>
+<p><strong>Lifecycle:</strong> NEW INCIDENT, INVESTIGATION OPEN, RETROSPECTIVE PENDING</p>
+<p><strong>Confidence:</strong> HIGH for Meta’s attributed confirmation; MODERATE for unconfirmed technical detail</p>
+<h2 id="financial-firms-face-source-reported-voice-social-engineering-attempts">Financial firms face source-reported voice-social-engineering attempts</h2>
+<p>Reuters reported that major hedge funds and private-equity firms were targeted by recent phone-based attempts to obtain access or sensitive information. Point72 reportedly told investors it faced an attack and that no customer information was stolen. Reuters’ named firms declined comment or did not respond, and no first-party incident notice was retrieved. <a href="https://www.reuters.com/legal/government/major-wall-street-hedge-funds-targeted-attempted-cyberattacks-bloomberg-news-2026-08-05/"><u>Reuters</u></a>.</p>
+<ul>
+<li><p><strong>RECOMMENDED:</strong> Require independent callback and approved-channel verification for privileged support, identity resets, remote access, payment, and sensitive-data requests.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Review help-desk, identity, telephony, remote-access, and endpoint evidence for attempted bypasses.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> Targeting and attempted access are not confirmed compromise; no-customer-data-loss reporting does not establish that no other information or systems were affected.</p></li>
+</ul>
+<p><strong>Source classification:</strong> Tier 5 journalism based substantially on anonymous sources</p>
+<p><strong>Publication:</strong> August 5, 2026</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> PARTIALLY VERIFIED</p>
+<p><strong>Lifecycle:</strong> EMERGING CAMPAIGN, ATTEMPTED ACCESS REPORTED</p>
+<p><strong>Confidence:</strong> MODERATE</p>
+<h1 id="actively-exploited-vulnerabilities-and-urgent-patches">Actively Exploited Vulnerabilities and Urgent Patches</h1>
+<h2 id="deadline-today-n-central-cve-2026-18577">DEADLINE TODAY: N-central CVE-2026-18577</h2>
+<p>N-able’s 2026.3.1.7 hotfix addresses CVE-2026-18577 and CVE-2026-18556. The two identifiers describe distinct authentication-bypass paths and have distinct KEV deadlines: August 6 and August 7. N-able has confirmed limited customer compromise involving N-central administrative access, Take Control access to managed endpoints, and Cloudflared persistence. <a href="https://status.n-able.com/2026/08/02/n-central-2026-3-hotfix-1-mitigation-for-cve-2026-18577/"><u>N-able hotfix notice</u></a>; <a href="https://www.n-able.com/blog/n-central-security-update-august-2-2026"><u>N-able investigation update</u></a>; <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"><u>CISA KEV Catalog</u></a>.</p>
+<ul>
+<li><p><strong>REQUIRED:</strong> Applicable FCEB agencies must complete CVE-2026-18577 actions today and CVE-2026-18556 actions by August 7.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Install 2026.3.1.7 and investigate N-central plus every managed endpoint reachable through it.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Hunt for remote-control sessions, new services, Cloudflared, credential use, certificate changes, endpoint actions, and persistence after access revocation.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> Hotfix installation and a clean indicator scan do not prove absence of compromise.</p></li>
+</ul>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> VERIFIED</p>
+<p><strong>Lifecycle:</strong> ACTIVELY EXPLOITED, CONFIRMED LIMITED CUSTOMER COMPROMISE, DEADLINE TODAY</p>
+<p><strong>Confidence:</strong> HIGH</p>
+<h2 id="due-august-7-langflow-n-central-and-tomcat">Due August 7: Langflow, N-central, and Tomcat</h2>
+<ul>
+<li><p><strong>IBM Langflow CVE-2026-9198:</strong> Versions 1.0.0 through 1.10.0 permit an unauthenticated chain from superuser-token creation to Python execution. Upgrade to 1.10.1 and investigate process, token, filesystem, cloud, and identity activity. <a href="https://www.ibm.com/support/pages/node/7278927"><u>IBM advisory</u></a>; <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-9198"><u>NVD</u></a>.</p></li>
+<li><p><strong>N-central CVE-2026-18556:</strong> Apply 2026.3.1.7 and perform management-plane and managed-endpoint compromise assessment. <a href="https://www.n-able.com/blog/n-central-security-update-august-2-2026"><u>N-able update</u></a>; <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-18556"><u>NVD</u></a>.</p></li>
+<li><p><strong>Apache Tomcat CVE-2026-34486:</strong> Releases 11.0.20, 10.1.53, and 9.0.116 are affected; fixed versions are 11.0.21, 10.1.54, and 9.0.117. CISA-ADP and Red Hat scores conflict, so no universal score is asserted. <a href="https://lists.apache.org/thread/9510k5p5zdvt9pkkgtyp85mvwxo2qrly"><u>Apache advisory</u></a>; <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34486"><u>NVD</u></a>.</p></li>
+</ul>
+<p><strong>Action:</strong> <strong>REQUIRED</strong> for applicable FCEB agencies by August 7; <strong>RECOMMENDED</strong> for other affected organizations according to risk and exposure.</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Lifecycle:</strong> ACTIVELY EXPLOITED, PATCHES AVAILABLE</p>
+<p><strong>Confidence:</strong> HIGH</p>
+<h2 id="due-august-8-teamcity-cve-2026-63077">Due August 8: TeamCity CVE-2026-63077</h2>
+<p>TeamCity On-Premises must move to 2025.11.7 or 2026.1.3, or use the vendor security patch plugin when immediate upgrade is impossible. Investigation must extend through build artifacts and downstream deployments because successful exploitation may affect configurations, credentials, artifacts, and pipeline integrity. <a href="https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/"><u>JetBrains advisory</u></a>; <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-63077"><u>NVD</u></a>.</p>
+<h2 id="continuing-urgent-register">Continuing urgent register</h2>
+<ul>
+<li><p><strong>Cisco FMC CVE-2026-20316 and Arista VeloCloud CVE-2026-16812:</strong> Federal deadlines are overdue where applicable; patch and assess management-plane compromise. <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh"><u>Cisco</u></a>; <a href="https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144"><u>Arista</u></a>.</p></li>
+<li><p><strong>Rails CVE-2026-66066, sentence-transformers CVE-2026-68770, and ComfyUI CVE-2026-68771:</strong> Continue exact-version remediation and evaluate secrets, model directories, serialized artifacts, and dataset nodes as execution or disclosure paths. <a href="https://github.com/rails/rails/security/advisories/GHSA-xr9x-r78c-5hrm"><u>Rails</u></a>; <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-68770"><u>sentence-transformers</u></a>; <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-68771"><u>ComfyUI</u></a>.</p></li>
+<li><p><strong>GNU tar CVE-2026-18477:</strong> Isolate affected incremental restores and obtain distribution-specific remediation. <a href="https://access.redhat.com/security/cve/cve-2026-18477"><u>Red Hat</u></a>.</p></li>
+<li><p><strong>Fortinet, Fastjson, PTC, vBulletin, JFrog, Better Auth, ArcadeDB, GitPython, and Bouncy Castle:</strong> Continue exact-version validation, remediation, and evidence-based assessment. <a href="https://www.fortiguard.com/psirt/FG-IR-25-934"><u>Fortinet</u></a>; <a href="https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-rce-vulnerability"><u>PTC</u></a>; <a href="https://docs.jfrog.com/releases/docs/jfrog-security-advisories"><u>JFrog</u></a>.</p></li>
+</ul>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> VERIFIED for originating records</p>
+<p><strong>Lifecycle:</strong> CONTINUING</p>
+<p><strong>Confidence:</strong> HIGH for existence and remediation; exploitation varies</p>
+<h1 id="campaigns-ransomware-nation-state-operations-breaches-and-disclosures">Campaigns, Ransomware, Nation-State Operations, Breaches and Disclosures</h1>
+<p>The npm campaign and reported financial-sector voice phishing are the material campaign developments. No new authoritative corporate filing changed the priority order during this review.</p>
+<p>Continuing incidents remain open:</p>
+<ul>
+<li><p><strong>Liechtenstein:</strong> Unauthorized account creation, several hours of access, and copied identifying data associated with approximately 31,000 legal entities are supported by government-attributed reporting. That is not a natural-person count. <a href="https://www.reuters.com/technology/liechtenstein-hackers-did-not-get-financial-data-government-says-2026-08-04/"><u>Reuters</u></a>.</p></li>
+<li><p><strong>Amgen:</strong> Third-party cloud access and exfiltration of proprietary data, patient PHI, and other information remain under investigation. <a href="https://www.sec.gov/Archives/edgar/data/318154/000031815426000119/amgn-20260729.htm"><u>Form 8-K</u></a>.</p></li>
+<li><p><strong>River Financial:</strong> Data removal is confirmed; exact categories, PII scope, and independent proof of deletion remain unresolved. <a href="https://www.sec.gov/Archives/edgar/data/1641601/000119312526325324/ck0001641601-20260619.htm"><u>Form 8-K/A</u></a>.</p></li>
+<li><p><strong>HealthStream and Analog Devices:</strong> File access or exfiltration remains confirmed while final scope and notification work continue. <a href="https://www.sec.gov/Archives/edgar/data/1095565/000143774926024890/hstm20260729_8k.htm"><u>HealthStream Form 8-K</u></a>; <a href="https://www.sec.gov/Archives/edgar/data/6281/000119312526324223/d158253d8k.htm"><u>Analog Devices Form 8-K</u></a>.</p></li>
+<li><p><strong>DfE/PNLD, fairlife, Origin Energy, Bank of Baroda, AnMed, and Zimbra:</strong> Continue evidence-based investigation and remediation. <a href="https://www.theguardian.com/technology/2026/jul/29/department-for-education-police-hackers-cybercrime"><u>DfE/PNLD</u></a>; <a href="https://media.defense.gov/2026/Jul/22/2003965244/-1/-1/CSA_RUSSIA_PHISHING_TARGET_ZIMBRA.PDF"><u>Zimbra joint advisory</u></a>.</p></li>
+</ul>
+<p><strong>Actions:</strong> <strong>RECOMMENDED</strong> preserve evidence and documented closure criteria; <strong>CONDITIONAL</strong> complete notifications after factual and legal applicability is established; <strong>INFORMATIONAL</strong> restoration, patching, or actor assertions do not prove closure.</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> VERIFIED or PARTIALLY VERIFIED as qualified</p>
+<p><strong>Lifecycle:</strong> CONTINUING, INVESTIGATIONS OPEN</p>
+<p><strong>Confidence:</strong> HIGH for first-party filings; MODERATE where journalism remains material</p>
+<h1 id="cloud-identity-and-zero-trust">Cloud, Identity and Zero Trust</h1>
+<p>The npm worm turns developer and CI identities into propagation infrastructure. Valid provenance can coexist with malicious source, and credential revocation can be dangerous if revocation-triggered persistence has not first been removed. <a href="https://socket.dev/blog/popular-npm-packages-in-the-keyv-and-cacheable-namespaces-compromised-in-active-supply-chain"><u>Socket</u></a>; <a href="https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/"><u>Datadog Security Labs</u></a>.</p>
+<p>TeamCity and N-central demonstrate management-plane blast radius: a trusted server can expose secrets, artifacts, agents, managed endpoints, and downstream deployments. Meta and AWS AgentCore demonstrate the corresponding agentic layer: independent authorization must exist at the network and tool-execution boundary. <a href="https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/"><u>JetBrains</u></a>; <a href="https://www.n-able.com/blog/n-central-security-update-august-2-2026"><u>N-able</u></a>; <a href="https://aws.amazon.com/security/security-bulletins/2026-073-aws/"><u>AWS</u></a>.</p>
+<p>Azure Cosmos DB CVE-2026-66803 remains a provider-remediated potential exposure. Successful exploitation, customer data access, exfiltration, persistence, and lateral movement were not established in reviewed evidence. <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-66803"><u>NVD</u></a>; <a href="https://www.reuters.com/technology/cyber-firm-wiz-says-flaw-could-have-led-mass-exposure-microsoft-cloud-customers-2026-07-30/"><u>Reuters</u></a>.</p>
+<ul>
+<li><p><strong>RECOMMENDED:</strong> Separate developer, CI/CD, package, cloud, model-evaluation, management, and production trust domains.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Use short-lived, audience-bound, least-privileged credentials and review OIDC trusted-publishing policies.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Preserve identity and control-plane evidence before rotation when investigation is active.</p></li>
+<li><p><strong>CONDITIONAL:</strong> Rotate credentials only after removing persistence and documenting the evidence basis.</p></li>
+</ul>
+<h1 id="otics-and-critical-infrastructure">OT/ICS and Critical Infrastructure</h1>
+<p>August 5 reporting expands the reported water-sector footprint to at least 12 states, while the FBI’s direct public record confirms reports from at least seven states. The federal record documents loss of monitoring and control, password and IP changes, pressure loss, flooding, and modified PLC project files. The larger state count remains journalism-supported rather than an updated federal count. <a href="https://www.fbi.gov/investigate/cyber/alerts/2026/malicious-cyber-actors-targeting-water-and-wastewater-sector-internet--facing-programmable-logic-controllers-causing-operational-disruptions"><u>FBI/EPA alert</u></a>; <a href="https://therecord.media/iran-cyberattacks-water-treatment"><u>The Record</u></a>.</p>
+<ul>
+<li><p><strong>RECOMMENDED:</strong> Disconnect PLCs from direct public exposure and broker necessary remote access through monitored secure gateways.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Validate passwords, IP settings, controller mode, logic, project files, cellular modems, HMIs, engineering workstations, and connected-device logs.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Test safe manual operation and verify backups contain known-good logic before restoration.</p></li>
+<li><p><strong>CONDITIONAL:</strong> Make controller or process changes only with engineering and safety authorization.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> Reported expansion does not establish compromise of every utility; Iranian attribution remains unconfirmed by federal agencies.</p></li>
+</ul>
+<p>CISA’s August 4 Acrisure vehicle-security and Thermo Fisher medical-device advisories remain in applicability review. <a href="https://www.cisa.gov/news-events/ics-advisories/icsa-26-216-01"><u>Acrisure advisory</u></a>; <a href="https://www.cisa.gov/news-events/ics-medical-advisories/icsma-26-216-01"><u>Thermo Fisher advisory</u></a>.</p>
+<p><strong>Last verification:</strong> August 6, 2026</p>
+<p><strong>Validation:</strong> VERIFIED for the federal baseline; PARTIALLY VERIFIED for 12-state scope</p>
+<p><strong>Lifecycle:</strong> UPDATED, ACTIVE MULTI-STATE OPERATIONAL THREAT</p>
+<p><strong>Confidence:</strong> HIGH for federal observations; MODERATE for complete scope and attribution</p>
+<h1 id="ai-and-model-security">AI and Model Security</h1>
+<p>Meta joins the separate OpenAI/Hugging Face, Anthropic, and UK AISI incident sets. They must not be merged into one event. Together, however, they establish a repeated control failure: live external connectivity, insufficient target restriction, real identities or credentials, and consequential tool authority during cyber evaluation. <a href="https://www.reuters.com/technology/metas-ai-model-hacked-another-company-during-testing-information-reports-2026-08-05/"><u>Meta/Reuters</u></a>; <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/"><u>OpenAI</u></a>; <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"><u>Anthropic</u></a>; <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"><u>AISI</u></a>.</p>
+<p>The npm incident adds an agent-adjacent execution path: malicious .claude and .vscode hooks can run when repositories are opened, without a traditional package installation. Controls for AI coding environments must therefore include repository trust, workspace hooks, extension and task policy, outbound network enforcement, and secrets isolation. <a href="https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack"><u>Aikido</u></a>.</p>
+<ul>
+<li><p><strong>RECOMMENDED:</strong> Deny external egress by default and use deterministic target allowlists.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Use synthetic services, repositories, identities, and credentials.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Require human approval for unknown targets, external messages, code or package publication, and discovered-credential use.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Monitor tool calls, network flows, repository changes, package publication, identity creation, and stop events in real time.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> A prompt, classifier, model refusal, sandbox label, provenance record, or signed artifact is not a complete authorization or trust decision.</p></li>
+</ul>
+<h1 id="grc-privacy-policy-regulatory-audit-and-compliance">GRC, Privacy, Policy, Regulatory, Audit and Compliance</h1>
+<h2 id="fedramp-notice-0016-status-remains-unresolved-publicly">FedRAMP Notice 0016 status remains unresolved publicly</h2>
+<p>Notice 0016 states that ten named offerings were pending revocation, corrective-action plans were due August 4, revocation would occur August 5 for failure to establish contact, and implementation is due August 31. The notice still displays the original pending-remediation list; no authoritative provider-by-provider outcome was identified. <a href="https://www.fedramp.gov/notices/0016/"><u>FedRAMP Notice 0016</u></a>.</p>
+<ul>
+<li><p><strong>REQUIRED:</strong> Named providers must follow direct FedRAMP requirements and instructions.</p></li>
+<li><p><strong>RECOMMENDED:</strong> Customers should obtain current Marketplace and provider evidence, determine system dependencies, and document continuity decisions.</p></li>
+<li><p><strong>CONDITIONAL:</strong> Activate contractual or replacement actions only when authoritative status and applicability support them.</p></li>
+<li><p><strong>INFORMATIONAL:</strong> The calendar date alone does not prove that a named offering was revoked.</p></li>
+</ul>
+<h2 id="eu-ai-act-article-50-remains-in-application">EU AI Act Article 50 remains in application</h2>
+<p>Article 50 applies from August 2, 2026. The Commission describes interaction notices, machine-readable marking for covered synthetic content, and specified deployer disclosures. A limited marking grace period applies to certain systems placed on the market before August 2, with compliance by December 2, 2026. Entity-specific duties depend on role, system, use, territory, exceptions, and human review. <a href="https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act"><u>European Commission FAQ</u></a>.</p>
+<h2 id="incident-and-supply-chain-evidence">Incident and supply-chain evidence</h2>
+<p>The Meta evaluation and npm campaign reinforce three audit requirements: preserve the authorization boundary, preserve what actually executed, and prove the integrity of resulting artifacts and downstream environments. A signed build does not validate source intent; a patched platform does not validate historical integrity; and a provider’s “no open issues” statement does not establish every customer’s impact.</p>
+<h1 id="framework-mapping">Framework Mapping</h1>
+<p>These mappings are analytical and do not establish compliance.</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 25%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Operational need</strong></th>
+<th><strong>NIST CSF 2.0</strong></th>
+<th><strong>NIST SP 800-53 Rev. 5</strong></th>
+<th><strong>CIS Controls v8.1</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exploited-vulnerability response</td>
+<td>ID.RA-01, PR.PS-02, RS.AN-03</td>
+<td>RA-5, SI-2, IR-4</td>
+<td>7, 13, 17</td>
+</tr>
+<tr class="even">
+<td>CI/CD and package integrity</td>
+<td>GV.SC-07, PR.DS-06, PR.PS-06</td>
+<td>SA-12, SI-7, SR-11</td>
+<td>2, 7, 16</td>
+</tr>
+<tr class="odd">
+<td>Credential and workload identity</td>
+<td>PR.AA-01, PR.AA-05</td>
+<td>AC-2, IA-5, SC-12</td>
+<td>5, 6</td>
+</tr>
+<tr class="even">
+<td>Agent target and tool authorization</td>
+<td>PR.AA-05, PR.IR-01</td>
+<td>AC-3, AC-4, AC-6, SC-7</td>
+<td>6, 12, 13</td>
+</tr>
+<tr class="odd">
+<td>Management-plane compromise</td>
+<td>DE.CM-03, RS.AN-06</td>
+<td>SI-4, IR-4, AU-6</td>
+<td>8, 13, 17</td>
+</tr>
+<tr class="even">
+<td>OT exposure and safe recovery</td>
+<td>ID.AM-01, PR.IR-01, RC.RP-01</td>
+<td>CM-8, SC-7, CP-10</td>
+<td>1, 11, 12</td>
+</tr>
+<tr class="odd">
+<td>Third-party evaluation governance</td>
+<td>GV.SC-07, GV.SC-10</td>
+<td>CA-8, SA-9, SR-6</td>
+<td>15, 18</td>
+</tr>
+<tr class="even">
+<td>Evidence and notification</td>
+<td>RS.AN-06, RS.CO-02</td>
+<td>AU-9, IR-6, PT-2</td>
+<td>3, 8, 17</td>
+</tr>
+</tbody>
+</table>
+<p>Framework currency was checked against <a href="https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"><u>NIST CSF 2.0</u></a>, <a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"><u>NIST SP 800-53 Rev. 5</u></a>, and <a href="https://www.cisecurity.org/controls/v8-1"><u>CIS Controls v8.1</u></a>.</p>
+<h1 id="act-today">Act Today</h1>
+<h2 id="required">Required</h2>
+<ol type="1">
+<li><p>Applicable FCEB agencies: complete N-central CVE-2026-18577 actions today.</p></li>
+<li><p>Applicable FCEB agencies: complete Langflow, N-central CVE-2026-18556, and Tomcat actions by August 7; complete TeamCity actions by August 8.</p></li>
+<li><p>Named FedRAMP providers: follow Notice 0016 and direct instructions; dependent customers should verify authoritative status.</p></li>
+<li><p>Applicable incident owners: perform mandatory preservation, privacy, contractual, regulatory, safety, and notification actions.</p></li>
+</ol>
+<h2 id="recommended">Recommended</h2>
+<ol type="1">
+<li><p>Patch TeamCity and examine builds, secrets, artifacts, agents, and downstream deployments.</p></li>
+<li><p>Identify npm exposure through live affected-package lists, lockfiles, caches, SBOMs, and install telemetry.</p></li>
+<li><p>Isolate affected npm execution environments, remove persistence, then revoke credentials and investigate propagation.</p></li>
+<li><p>Apply N-central 2026.3.1.7 and assess every managed endpoint.</p></li>
+<li><p>Upgrade Langflow and exact affected Tomcat releases before tomorrow’s deadline.</p></li>
+<li><p>Enforce AI evaluation target, egress, identity, repository, package, and tool permissions outside the model.</p></li>
+<li><p>Remove public PLC exposure and validate logic, projects, passwords, modems, and safe manual operation.</p></li>
+<li><p>Harden voice-based identity and help-desk verification.</p></li>
+<li><p>Maintain continuing breach records until evidence-based closure.</p></li>
+</ol>
+<h1 id="study-today">Study Today</h1>
+<h2 id="provenance-is-not-trust">Provenance is not trust</h2>
+<p>Provenance can prove that a specific workflow built an artifact from specific source. It cannot prove that the source was safe, the maintainer identity was legitimate, the workflow authorization was appropriate, or the resulting artifact should be executed.</p>
+<p>A reliable software-supply-chain decision asks:</p>
+<ol type="1">
+<li><p>Who controlled the source and release identity?</p></li>
+<li><p>Which exact commit and dependencies entered the build?</p></li>
+<li><p>What lifecycle hooks and workspace tasks execute?</p></li>
+<li><p>Which credentials and networks can the build reach?</p></li>
+<li><p>Did the artifact match policy and independent malware analysis?</p></li>
+<li><p>Can publication and downstream deployment be stopped or revoked?</p></li>
+<li><p>What evidence supports clean rebuild and closure?</p></li>
+</ol>
+<h1 id="career-and-technical-growth">Career and Technical Growth</h1>
+<p>Build a <strong>Developer and CI Supply-Chain Incident Worksheet</strong> containing:</p>
+<ul>
+<li><p>Package, version, integrity hash, and source commit</p></li>
+<li><p>Maintainer, publisher, OIDC, and workflow identity</p></li>
+<li><p>Install time, host, runner, and script policy</p></li>
+<li><p>Lifecycle hooks, workspace tasks, and downloaded runtimes</p></li>
+<li><p>Reachable GitHub, npm, cloud, Vault, Kubernetes, and CI credentials</p></li>
+<li><p>Repository, branch, release, and package changes</p></li>
+<li><p>Network and exfiltration evidence</p></li>
+<li><p>Persistence-removal order</p></li>
+<li><p>Credential revocation and validation evidence</p></li>
+<li><p>Rebuild source and artifact verification</p></li>
+<li><p>Downstream deployment impact</p></li>
+<li><p>Incident, privacy, third-party, and notification decisions</p></li>
+<li><p>Closure owner and approval</p></li>
+</ul>
+<h1 id="questions-leaders-should-ask">Questions Leaders Should Ask</h1>
+<ol type="1">
+<li><p>Which N-central systems must meet today’s deadline, and which managed endpoints remain unassessed?</p></li>
+<li><p>Which Langflow, N-central, Tomcat, and TeamCity assets are affected, exposed, patched, and investigated?</p></li>
+<li><p>Did any developer workstation or CI runner execute an affected npm lifecycle script?</p></li>
+<li><p>Were persistence mechanisms removed before credentials were revoked?</p></li>
+<li><p>Can valid provenance be produced from malicious source in our pipeline?</p></li>
+<li><p>Can any AI evaluation reach an unapproved host, repository, registry, person, or tool?</p></li>
+<li><p>Can help-desk and privileged-access workflows resist convincing voice impersonation?</p></li>
+<li><p>Which PLCs or cellular-connected OT devices remain publicly reachable?</p></li>
+<li><p>What authoritative evidence shows the current FedRAMP status of each dependent offering?</p></li>
+<li><p>What must be proven before each open incident is closed?</p></li>
+</ol>
+<h1 id="emerging-conflicting-and-pending-validation">Emerging, Conflicting, and Pending Validation</h1>
+<ul>
+<li><p><strong>npm scope:</strong> Researchers agree on malicious behavior and core affected packages but report changing package/version totals. Use live registers.</p></li>
+<li><p><strong>Meta:</strong> Incident existence is confirmed; model identity, affected organization, duration, data impact, and complete actions remain incomplete.</p></li>
+<li><p><strong>TeamCity:</strong> CISA establishes active exploitation; complete public indicators and victim scope were not identified.</p></li>
+<li><p><strong>Water sector:</strong> Federal reporting confirms at least seven states; journalism reports at least 12. Definitive attribution remains unconfirmed.</p></li>
+<li><p><strong>Financial-sector attempts:</strong> Anonymous-source reporting supports attempted voice social engineering; successful compromise and complete victim scope are not established.</p></li>
+<li><p><strong>FedRAMP:</strong> Notice deadlines are verified; provider-by-provider revocation or remediation outcomes are not public in the reviewed source.</p></li>
+<li><p><strong>FIRST EPSS:</strong> Current record-level values could not be retrieved for the complete published CVE set.</p></li>
+<li><p><strong>VulnCheck KEV:</strong> Complete record-level comparisons were unavailable.</p></li>
+<li><p><strong>CISA KEV JSON:</strong> Direct structured-feed retrieval was unavailable; CISA alert, NVD KEV enrichment, vendor records, and catalog pages were used.</p></li>
+<li><p><strong>Azure Cosmos DB:</strong> Provider remediation and no-evidence-of-impact reporting remain supported; customer compromise is not established.</p></li>
+<li><p><strong>River deletion:</strong> The actor’s representation is not independent deletion evidence.</p></li>
+</ul>
+<h1 id="bottom-line">Bottom Line</h1>
+<p>Today’s immediate obligation is N-central CVE-2026-18577. Tomorrow brings Langflow, N-central CVE-2026-18556, and Tomcat deadlines; TeamCity follows on August 8. Treat these as patching plus compromise-assessment events, especially where a management or build platform can reach downstream systems.</p>
+<p>The npm incident demonstrates that signed provenance can faithfully attest a malicious build. Meta’s incident demonstrates that an evaluation can reach a real third party when internet access is misconfigured. TeamCity and N-central demonstrate that trusted platforms multiply blast radius.</p>
+<p>Trust must be enforced independently at source, identity, network, target, tool, package, artifact, and human-approval boundaries—and closure must rest on preserved evidence, not a patch, a signature, silence, or an unsupported assurance.</p>
+<h1 id="sources-and-references">Sources and References</h1>
+<h2 id="exploited-vulnerabilities-and-deadlines">Exploited vulnerabilities and deadlines</h2>
+<ul>
+<li><p><a href="https://www.cisa.gov/news-events/alerts/2026/08/05/cisa-adds-one-known-exploited-vulnerability-catalog"><u>CISA August 5 TeamCity KEV alert</u></a></p></li>
+<li><p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-63077"><u>NVD CVE-2026-63077</u></a></p></li>
+<li><p><a href="https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/"><u>JetBrains TeamCity advisory</u></a></p></li>
+<li><p><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"><u>CISA KEV Catalog</u></a></p></li>
+<li><p><a href="https://www.n-able.com/blog/n-central-security-update-august-2-2026"><u>N-able investigation update</u></a></p></li>
+<li><p><a href="https://status.n-able.com/2026/08/02/n-central-2026-3-hotfix-1-mitigation-for-cve-2026-18577/"><u>N-able hotfix notice</u></a></p></li>
+<li><p><a href="https://www.ibm.com/support/pages/node/7278927"><u>IBM Langflow advisory</u></a></p></li>
+<li><p><a href="https://lists.apache.org/thread/9510k5p5zdvt9pkkgtyp85mvwxo2qrly"><u>Apache Tomcat advisory</u></a></p></li>
+<li><p><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh"><u>Cisco FMC advisory</u></a></p></li>
+<li><p><a href="https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144"><u>Arista Advisory 0144</u></a></p></li>
+</ul>
+<h2 id="supply-chain-ai-identity-and-cloud">Supply chain, AI, identity, and cloud</h2>
+<ul>
+<li><p><a href="https://socket.dev/blog/popular-npm-packages-in-the-keyv-and-cacheable-namespaces-compromised-in-active-supply-chain"><u>Socket keyv/cacheable research</u></a></p></li>
+<li><p><a href="https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack"><u>Aikido keyv/cacheable research</u></a></p></li>
+<li><p><a href="https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/"><u>Datadog Security Labs npm research</u></a></p></li>
+<li><p><a href="https://www.reuters.com/technology/metas-ai-model-hacked-another-company-during-testing-information-reports-2026-08-05/"><u>Meta incident reported by Reuters</u></a></p></li>
+<li><p><a href="https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report/"><u>Meta Muse Spark 1.1 evaluation report</u></a></p></li>
+<li><p><a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"><u>UK AISI incident report</u></a></p></li>
+<li><p><a href="https://aws.amazon.com/security/security-bulletins/2026-073-aws/"><u>AWS AgentCore bulletin</u></a></p></li>
+<li><p><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/"><u>OpenAI incident report</u></a></p></li>
+<li><p><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"><u>Anthropic incident report</u></a></p></li>
+<li><p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-66803"><u>Azure Cosmos DB CVE-2026-66803</u></a></p></li>
+</ul>
+<h2 id="campaigns-ot-incidents-and-governance">Campaigns, OT, incidents, and governance</h2>
+<ul>
+<li><p><a href="https://www.reuters.com/legal/government/major-wall-street-hedge-funds-targeted-attempted-cyberattacks-bloomberg-news-2026-08-05/"><u>Reuters financial-sector attempted attacks</u></a></p></li>
+<li><p><a href="https://www.fbi.gov/investigate/cyber/alerts/2026/malicious-cyber-actors-targeting-water-and-wastewater-sector-internet--facing-programmable-logic-controllers-causing-operational-disruptions"><u>FBI/EPA water-sector alert</u></a></p></li>
+<li><p><a href="https://therecord.media/iran-cyberattacks-water-treatment"><u>The Record water-sector update</u></a></p></li>
+<li><p><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-26-216-01"><u>CISA Acrisure advisory</u></a></p></li>
+<li><p><a href="https://www.fedramp.gov/notices/0016/"><u>FedRAMP Notice 0016</u></a></p></li>
+<li><p><a href="https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act"><u>EU AI Act Article 50 FAQ</u></a></p></li>
+<li><p><a href="https://www.sec.gov/Archives/edgar/data/318154/000031815426000119/amgn-20260729.htm"><u>Amgen Form 8-K</u></a></p></li>
+<li><p><a href="https://www.sec.gov/Archives/edgar/data/1641601/000119312526325324/ck0001641601-20260619.htm"><u>River Financial Form 8-K/A</u></a></p></li>
+<li><p><a href="https://www.sec.gov/Archives/edgar/data/1095565/000143774926024890/hstm20260729_8k.htm"><u>HealthStream Form 8-K</u></a></p></li>
+<li><p><a href="https://www.sec.gov/Archives/edgar/data/6281/000119312526324223/d158253d8k.htm"><u>Analog Devices Form 8-K</u></a></p></li>
+<li><p><a href="https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"><u>NIST CSF 2.0</u></a></p></li>
+<li><p><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"><u>NIST SP 800-53 Rev. 5</u></a></p></li>
+<li><p><a href="https://www.cisecurity.org/controls/v8-1"><u>CIS Controls v8.1</u></a></p></li>
+<li><p><a href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/"><u>CyberChefCab portfolio</u></a></p></li>
+</ul>
+
+</article>
+</main>
+</body>
+</html>
