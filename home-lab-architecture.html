@@ -126,7 +126,28 @@
           evidence-driven portfolio work.
         </p>
       </article>
-
+      <article class="resume-section">
+        <h2>Current Repurposed Hardware and Learning Outcomes</h2>
+        <p>
+          I built this environment around existing equipment instead of waiting for a full enterprise lab budget.
+          The work combines networking fundamentals, endpoint telemetry, virtualization, and practical problem-solving.
+          Hardware roles below describe the current laboratory configuration, not always-on production services.
+        </p>
+        <ul>
+          <li><strong>HP m8530f:</strong> older Debian Linux system used as a security sensor and rsyslog forwarder.</li>
+          <li><strong>Lenovo V15:</strong> Windows system running Splunk Enterprise and receiving laboratory security events.</li>
+          <li><strong>Dell Inspiron 5400:</strong> Windows development and testing system with a Kali Linux virtual machine.</li>
+        </ul>
+        <p>
+          Practical outcomes include Linux and Windows configuration, controlled log forwarding, event ingestion,
+          network troubleshooting, remote development workflow, and investigation of constrained memory and storage.
+          I document verified behavior separately from proposed future capabilities.
+        </p>
+        <p>
+          <strong>Expansion goal:</strong> dedicated virtualization capacity and managed networking hardware to practice
+          VLANs, routing, firewall policies, segmentation, traffic observation, and failure recovery in isolated networks.
+        </p>
+      </article>
       <article class="resume-section">
         <h2>Sanitized Architecture Diagram</h2>
         <p class="architecture-flow">
@@ -229,11 +250,11 @@
           <h2>Current Lab Environment</h2>
           <h3>Current</h3>
           <ul>
-            <li>Windows host system</li>
-            <li>VirtualBox hypervisor</li>
-            <li>Kali Linux virtual machine</li>
-            <li>Splunk Enterprise installed locally</li>
-            <li>Windows Event Log ingestion for security telemetry analysis</li>
+            <li>HP m8530f: repurposed Debian Linux sensor with rsyslog event forwarding</li>
+            <li>Lenovo V15: Windows security telemetry and Splunk Enterprise receiver</li>
+            <li>Dell Inspiron 5400: Windows development host, VirtualBox, Kali Linux guest, and controlled testing</li>
+            <li>Observed log forwarding, local security event ingestion, and Splunk investigation workflows</li>
+            <li>Lab operation is constrained by aging hardware, available RAM, and virtual-machine capacity</li>
             <li>Google Drive based evidence repository</li>
             <li>Git and GitHub based portfolio workflow</li>
           </ul>
@@ -447,7 +468,7 @@
         <h2>Roadmap (Planned Enhancements)</h2>
         <ul>
           <li>Planned: Home lab diagrams</li>
-          <li>Planned: Sysmon integration</li>
+          <li>Planned: expand Sysmon telemetry coverage and validation beyond existing endpoint use</li>
           <li>Planned: Wazuh or Security Onion integration</li>
           <li>Planned: Windows Server and Active Directory lab build-out</li>
           <li>Planned: pfSense or OPNSense integration</li>

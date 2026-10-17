@@ -1,6 +1,6 @@
 # Isaac Caballero Cybersecurity Portfolio
 
-Public-safe cybersecurity portfolio focused on recruiter-ready presentation of verified work across cloud security, incident response, digital forensics, GRC, and security operations.
+Public-safe cybersecurity portfolio documenting the transition from 27 years of Navy leadership to graduate cybersecurity education, independent security-laboratory engineering, security operations, network security, incident response, DFIR, GRC, and controlled defensive research. Current academic enrollment: MS Cybersecurity, Hawaiʻi Pacific University (in progress).
 
 ## Portfolio Purpose
 
@@ -17,13 +17,24 @@ Core pages in this repository:
 
 - `index.html` - Home
 - `portfolio.html` - Projects
-- `certifications.html` - Certifications
+- `certifications.html` - Certifications and current graduate education
+- `home-lab-architecture.html` - Public-safe three-system home-lab architecture
+- `research.html` - Cloud Security & DFIR and Adversarial AI & Trusted Systems research
 - `resume.html` - Resume highlights
 - `contact.html` - Public contact routes
 - `splunk-soc-lab.html` - Featured project detail
 - `Isaac_Caballero_Cybersecurity_Resume.html` - Download-friendly resume page
 - `404.html` - Custom not-found page for GitHub Pages
 - `style.css` - Shared styling and responsive behavior
+
+## October 2026 Technical Progress
+
+- **Observed lab work:** HP m8530f Debian rsyslog forwarding, Lenovo V15 Splunk Enterprise and Windows telemetry, Dell Inspiron 5400 virtualization/Kali development, and network troubleshooting.
+- **Education:** South University BSIT with cybersecurity specialization, Magna Cum Laude (2025); Hawaiʻi Pacific University MS Cybersecurity (in progress).
+- **Credentials:** CompTIA A+, Network+, and Security+ earned; CySA+ exam preparation remains in progress.
+- **Research:** defensive laboratory work on authorization, cryptographic evidence, and secure distributed systems; internal implementation details are withheld.
+- **Planned, not yet completed:** advanced VLAN-capable switching, isolated firewall/routing labs, and higher-capacity virtualization infrastructure.
+- **Historical research:** August 2026 briefs are archived records, not current security alerts.
 
 ## GitHub Pages Deployment Notes
 

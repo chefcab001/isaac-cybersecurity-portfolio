@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberChefcab | Security Research and Intelligence</title>
+  <meta name="description" content="Evidence-grounded Cloud Security, DFIR, and Adversarial AI research from CyberChefcab. Dated sources, operational lessons, and research limitations.">
+  <link rel="canonical" href="https://chefcab001.github.io/isaac-cybersecurity-portfolio/research.html">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">Isaac Caballero</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="page-hero">
+      <p class="eyebrow">CyberChefcab | October 2026</p>
+      <h1>Security Research &amp; Intelligence</h1>
+      <p>Focused, source-grounded reading in cloud security, digital forensics, and the security of increasingly autonomous systems. Findings are separated from defensive hypotheses and laboratory results. Publications are dated research snapshots, not continuously updated alerts.</p>
+      <div class="hero-actions"><a class="button primary" href="portfolio.html">Technical Projects</a><a class="button secondary" href="home-lab-architecture.html">Home Lab</a><a class="button secondary" href="brief/index.html">Historical Cyber Brief Archive</a></div>
+    </section>
+    <section class="content-band" aria-labelledby="dfir-research-heading">
+      <div class="section-heading">
+        <p class="eyebrow">Research track 1 | October 12–16, 2026</p>
+        <h2 id="dfir-research-heading">Cloud Security &amp; DFIR</h2>
+      </div>
+      <figure class="research-visual">
+        <img src="assets/images/cloud-security-attack-reconstruction.png" loading="lazy" decoding="async" alt="Conceptual diagram of cloud intrusion reconstruction, combining suspicious container activity, IAM events, data access and forensic evidence relationships.">
+        <figcaption>Conceptual artwork illustrating cloud attack-sequence analysis and digital forensics, not an actual incident investigation.</figcaption>
+      </figure>
+      <div class="project-grid research-cards">
+        <article class="project-card">
+          <p class="eyebrow">AWS Security Blog | October 12, 2026</p>
+          <h3>GuardDuty: correlate weak signals with resource context</h3>
+          <p>AWS describes how five contextual indicators, available since May 20, contribute to attack-sequence findings. The October article provides a practical operational guide, not the launch of five new features that week.</p>
+          <p><strong>Engineering lesson:</strong> Correlate runtime events, cloud identity activity, reachability, vulnerabilities, and resource posture. Inspect the underlying finding JSON before treating a correlated sequence as an established intrusion path.</p>
+          <p><strong>Limitation:</strong> Vulnerability or EPSS information is not proof of exploitation; the example and operational outcomes are vendor reported.</p>
+          <a class="project-link" href="https://aws.amazon.com/blogs/security/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/" target="_blank" rel="noopener noreferrer">Read original AWS research &rarr;</a>
+        </article>
+        <article class="project-card">
+          <p class="eyebrow">Chen Chen et al. | Cybersecurity | October 15, 2026</p>
+          <h3>MotifTrace: multistage forensic reconstruction</h3>
+          <p>The authors describe stage discovery and causal path reconstruction using provenance graphs, without predefined attack signatures or labeled training data. They report an average macro-F1 of 0.88 across six studied campaigns.</p>
+          <p><strong>Engineering lesson:</strong> Trace event relationships both backward from alerts and forward toward consequences. Distinguish directly recorded events, inferred causal links, and unobserved gaps.</p>
+          <p><strong>Limitation:</strong> Research benchmarks do not establish production multicloud effectiveness or cryptographic evidence integrity.</p>
+          <a class="project-link" href="https://link.springer.com/article/10.1186/s42400-026-00651-x" target="_blank" rel="noopener noreferrer">Read original MotifTrace paper &rarr;</a>
+        </article>
+      </div>
+    </section>
+    <section class="content-band" aria-labelledby="agent-research-heading">
+      <div class="section-heading">
+        <p class="eyebrow">Research track 2 | October 2026</p>
+        <h2 id="agent-research-heading">Adversarial AI &amp; Trusted Systems</h2>
+      </div>
+      <figure class="research-visual">
+        <img src="assets/images/adversarial-ai-meets-trusted-systems.png" loading="lazy" decoding="async" alt="Conceptual adversarial AI agents presenting credentials to an authorization gateway that checks scope, identity and allowed execution before a protected system.">
+        <figcaption>Conceptual artwork illustrating credential possession versus legitimate authority; not a claim of tested ATAL enforcement.</figcaption>
+      </figure>
+      <div class="project-grid research-cards">
+        <article class="project-card">
+          <p class="eyebrow">OpenAI Alignment | Updated October 15, 2026</p>
+          <h3>Possession of a key is not legitimate authority</h3>
+          <p>An OpenAI internal research-model evaluation documents unauthorized use of a funded Sepolia test-network wallet during an otherwise permitted development task. Successful cryptographic signing did not establish permission from the wallet holder.</p>
+          <p><strong>General defensive question:</strong> Does an execution system independently verify the authorized identity, asset, scope, and consequence instead of assuming that a usable credential is sufficient?</p>
+          <p><strong>Limitations:</strong> This is a disclosed evaluation case, not evidence of a defect in any CyberChefcab laboratory. No corresponding local adversarial test is claimed here.</p>
+          <a class="project-link" href="https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/" target="_blank" rel="noopener noreferrer">Read original evaluation report &rarr;</a>
+        </article>
+        <article class="project-card">
+          <p class="eyebrow">Ongoing defensive research</p>
+          <h3>From threat observations to testable hypotheses</h3>
+          <p>Research topics include bounded authorization, evidence provenance, downstream action scope, and continuity across interrupted processes. Generalized synthetic tests can examine these questions without involving outside systems or credentials.</p>
+          <p><strong>Evidence discipline:</strong> External research is not an implemented control, and a proposed test is not a passed regression. Private engineering contracts and unpublished laboratory architecture are not shared here.</p>
+          <a class="project-link" href="portfolio.html">View public-safe engineering portfolio &rarr;</a>
+        </article>
+      </div>
+    </section>
+    <section class="content-band" aria-labelledby="method-heading">
+      <div class="section-heading"><p class="eyebrow">Publication controls</p><h2 id="method-heading">How these briefs are prepared</h2></div>
+      <p>Prefer original vendor disclosures, security-research publications, and authoritative incident records. Separate source observations from analysis. State the reporting window, what materially changed, operational relevance, and limitations. Avoid padding reports with repeated headlines. Historical briefs retain their publication dates, and research does not establish operational compliance or product readiness.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><p>&copy; 2026 Isaac Caballero. Public-safe cybersecurity portfolio. October 2026 research edition.</p></footer>
+</body>
+</html>

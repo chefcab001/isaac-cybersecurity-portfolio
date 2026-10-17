@@ -752,3 +752,26 @@ h3 {
     padding: 18px;
   }
 }
+
+/* October 2026 editorial refinement: preserve brand palette and layout. */
+.resume-main .resume-section li,
+.resume-main .resume-section p { font-size: 1rem; line-height: 1.75; }
+.resume-sidebar .compact-list li { font-size: 0.94rem; line-height: 1.6; }
+.research-cards { align-items: stretch; }
+.research-cards .project-card { gap: 0.5rem; }
+.research-cards .project-card p { line-height: 1.7; }
+.research-cards .project-card a:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
+.research-visual {
+  margin: 1rem 0 1.5rem 0;
+  border: 1px solid rgba(94, 149, 255, 0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(8, 18, 38, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.research-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
