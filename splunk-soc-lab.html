@@ -104,15 +104,15 @@
       </article>
 
       <article class="resume-section">
-        <h2>Detection Engineering</h2>
+        <h2>Event Investigation and SPL Hunts</h2>
         <ul>
           <li>Event ID 4624: successful authentication analysis</li>
-          <li>Event ID 4625: failed logon hunt with documented negative findings</li>
+          <li>Event ID 4625: 41 historical failed logons identified and classified; initial limited-window searches returned no results</li>
           <li>Event ID 4634: logoff event activity review</li>
           <li>Event ID 4648: explicit credential usage monitoring</li>
           <li>Event ID 4672: privileged logon event review</li>
           <li>Event ID 4688: process creation and top process frequency analysis</li>
-          <li>Event ID 4768: Kerberos authentication hunt with documented negative findings</li>
+          <li>Event ID 4768: Kerberos authentication search with no matches in the documented search scope</li>
         </ul>
       </article>
 
@@ -120,7 +120,7 @@
         <h2>SPL Query Examples</h2>
         <ul>
           <li><code>source="WinEventLog:Security" EventCode=4624 | top Account_Name</code></li>
-          <li><code>source="WinEventLog:Security" EventCode=4625 | top Account_Name</code></li>
+          <li><code>source="WinEventLog:Security" EventCode=4625 | stats count AS matching_events</code></li>
           <li><code>source="WinEventLog:Security" | top limit=10 EventCode</code></li>
           <li><code>source="WinEventLog:Security" EventCode=4688 | top New_Process_Name</code></li>
           <li><code>source="WinEventLog:Security" EventCode=4648</code></li>
@@ -140,16 +140,52 @@
           </thead>
           <tbody>
             <tr><td>4624</td><td>Successful logon</td><td>Validated</td></tr>
-            <tr><td>4625</td><td>Failed logon</td><td>Validated</td></tr>
+            <tr><td>4625</td><td>Failed logon</td><td>Observed: 41 historical records; investigated</td></tr>
             <tr><td>4634</td><td>Logoff</td><td>Validated</td></tr>
             <tr><td>4648</td><td>Explicit credential usage</td><td>Validated</td></tr>
             <tr><td>4672</td><td>Privileged logon</td><td>Validated</td></tr>
             <tr><td>4688</td><td>Process creation</td><td>Validated</td></tr>
-            <tr><td>4768</td><td>Kerberos authentication</td><td>Validated</td></tr>
+            <tr><td>4768</td><td>Kerberos authentication</td><td>Search completed; no matches in captured scope</td></tr>
           </tbody>
         </table>
       </article>
 
+      <article class="resume-section">
+        <h2>Case Study: Historical Failed Logons and NTLM Investigation</h2>
+        <p>
+          A historical search of <code>WinEventLog:Security</code> identified 41 Windows Security Event ID 4625
+          records dated July 1 through October 9, 2026. An earlier 24-hour search returned zero matches;
+          widening the time range revealed historical activity. A prior field-based aggregation also required
+          validation against Splunk's actual extracted field names.
+        </p>
+        <p>
+          The 41 records were grouped by logon type, Windows status and substatus. The breakdown included
+          16 network logon failures reporting disabled-account status, nine network incorrect-password failures,
+          eight interactive failures requiring further classification, six interactive incorrect-password failures,
+          and two network failures involving unknown-account status.
+        </p>
+        <h3>Focused Analysis: July 28, 2026</h3>
+        <p>
+          Nine incorrect-password network logons were associated with two distinct populated source addresses.
+          One source contributed five events and the second contributed four. All nine records reported
+          <code>NtLmSsp</code> as the logon process and <code>NTLM</code> as the authentication package.
+          The source groups showed two and three distinct account field values, respectively; field-value counts
+          do not independently establish the number of valid user accounts.
+        </p>
+        <table>
+          <thead><tr><th scope="col">Anonymized source</th><th scope="col">Failed logons</th><th scope="col">Observed time window</th></tr></thead>
+          <tbody>
+            <tr><td>Source 1</td><td>5</td><td>08:42&ndash;09:59, July 28</td></tr>
+            <tr><td>Source 2</td><td>4</td><td>10:19&ndash;10:37, July 28</td></tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>Analyst assessment:</strong> Repeated NTLM authentication failures warrant contextual triage.
+          The observed records do not establish password spraying, brute-force activity, unauthorized access,
+          or compromise. Root cause remains undetermined. Counts and conclusions reflect the historical
+          Splunk search scope, not a claim of continuous monitoring or a deployed alerting rule.
+        </p>
+      </article>
       <article class="resume-section">
         <h2>Investigation Workflow Diagram</h2>
         <p>
@@ -211,15 +247,14 @@
           <li>Authentication and logoff telemetry supports account activity monitoring workflows.</li>
           <li>Privileged and explicit credential events provide high-value investigation pivot points.</li>
           <li>Process creation visibility enables baseline behavior review and suspicious execution triage.</li>
-          <li>No-result hunts were documented as valid outcomes to support baseline confidence.</li>
+          <li>A 24-hour no-result authentication search was reconciled with 41 historical Event ID 4625 records by correcting search scope.</li>
         </ul>
       </article>
 
       <article class="resume-section">
         <h2>Lessons Learned</h2>
         <p>
-          Not all searches returned matching events in the selected time range. These negative outcomes were preserved
-          as valid evidence of disciplined SOC analysis and transparent reporting.
+          A zero-result search is scoped to its selected time range and filters, not proof of an absence of historical activity. The 4625 review exposed the importance of time-range selection, field extraction validation, and separating authentication anomalies from confirmed incidents.
         </p>
       </article>
 
